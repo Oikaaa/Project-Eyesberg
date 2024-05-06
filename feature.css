@@ -1,0 +1,234 @@
+.base{
+    padding: 0px 10% 150px 10%;
+}
+
+.featureImg{
+    width: 100%;
+}
+
+.divBase{
+    margin: 40px 0px;
+}
+
+/*-----*/
+
+.bookNR{
+    width: 195px;
+    transition: 1s;
+    box-shadow: 0px 30px 30px rgb(225, 225, 225);
+    margin: 0px 10px;
+}
+
+.bookHP{
+    width: 195px;
+    transition: 1s;
+    box-shadow: 0px 30px 30px rgb(225, 225, 225);
+    margin: 0px 10px;
+}
+
+.bookNR:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0px 0px 30px rgb(225, 225, 225);
+}
+
+.bookHP:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0px 0px 30px rgb(225, 225, 225);
+}
+
+.oeImg{
+    width: 195px;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.ove{
+    overflow: hidden;
+}
+
+.detail{
+    padding: 10px;
+}
+
+.detailHd{
+    margin: 0px;
+    font-size: 16px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    max-width: 195px;
+    text-align: center;
+}
+
+.detailHd:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.detailAu{
+    margin: 0px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.detailAu:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*--------*/
+.arrowBtn{
+    padding: 15px;
+    border: none;
+    background-color: white;
+    transition: 1s;
+    box-shadow: 0px 0px 10px rgb(218, 218, 218);
+}
+
+.arrowBtn:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.arrow{
+    font-size: 16px;
+}
+
+.bodyFeContain{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bodyFe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-----*/
+.hdFe{
+    font-weight: 600;
+}
+
+.FYPHd{
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+    font-weight: 600;
+}
+
+.slopFYP{
+    text-align: center;
+    margin: 0px;
+    font-weight: 300;
+}
+
+/*-----*/
+
+.bookS{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.books{
+    display: flex;
+}
+
+.imgG{
+    height: 100px;
+    width: 70px;
+    object-fit: cover;
+}
+
+.imgG:hover{
+    cursor: pointer;
+}
+
+.headerS{
+    margin: 0px;
+    font-size: 20px;
+}
+
+.authorS{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.otherS{
+    display: flex;
+    color: rgb(113, 113, 113);
+}
+
+.rateS{
+    font-size: 15px;
+    margin: 0px;
+}
+
+
+.likeS{
+    margin: 0px;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.detailS{
+    padding: 0px 10px;
+}
+
+.readS{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: rgb(98, 169, 98);
+    border-radius: 5px;
+}
+
+.readS:hover{
+    cursor: pointer;
+}
+
+/*-----*/
+
+.realContain{
+    display: flex;
+    justify-content: space-between;
+}
+
+hr{
+    border: 0.1px solid rgb(183, 183, 183);
+}
+
+.imgSB{
+    width: 100%;
+    box-shadow: 0px 0px 10px rgb(190, 190, 190);
+}
+
+.secondShelf{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.sSQuoteZone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sSquote{
+    font-style: italic;
+    color: rgb(117, 117, 117);
+    font-weight: 300;
+    margin: 20px;
+    text-align: center;
+}
+
+.sSAuthor{
+    margin: 0px;
+}

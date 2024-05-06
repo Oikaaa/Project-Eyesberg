@@ -1,0 +1,276 @@
+.container{
+    padding: 100px 15%;
+    display: flex;
+}
+
+.userProfile{
+    display: flex;
+}
+
+.userAvatar{
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgb(48, 48, 48);
+}
+
+.userAvatar:hover{
+    cursor: pointer;
+}
+
+.primary{
+    width: 680px;
+}
+
+.detailUserProfile{
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.upperDN{
+    font-size: 20px;
+    margin: 0px;
+}
+
+.upperProfileDetail{
+    display: flex;
+    align-items: end;
+}
+
+.avatarUserProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editProfileText{
+    font-size: 13px;
+    color: #00635d;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.other{
+    font-size: 12px;
+    color: #00635d;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: left;
+}
+
+.smallText{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.data{
+    color: gray;
+    font-weight: 400;
+    margin-left: 100px ;
+    text-align: justify;
+}
+
+.textDetail{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*--------------------*/
+
+.userLibrary{
+    margin: 25px 0px;
+    padding: 0px 30px;
+}
+
+.libraryHeader{
+    margin: 0px;
+    font-size: 18px;
+
+}
+
+.libraryContent{
+    padding: 10px;
+    width: 100px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.libraryContent:hover{
+    cursor: pointer;
+    background-color: rgb(214, 214, 214);
+    color: black;
+}
+
+.current{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.libraryUl{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.libraryDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: rgb(244, 244, 244);
+    border-radius: 0px 0px 15px 15px;
+}
+
+/*---------*/
+.desHeader{
+    margin: 0px;
+    font-size: 18px;
+}
+
+.userDes{
+    margin: 25px 0px;
+    padding: 0px 30px;
+}
+
+.desContainer{
+    margin-top: 5px;
+}
+
+.desContext{
+    color: gray;
+}
+
+.smallertext{
+    color: #00635d;
+    font-weight: 500;
+}
+
+/*--------*/
+.secondary{
+    width: 300px;
+}
+
+.achievementImg{
+    width: 300px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 25px;
+}
+
+.badgeHeader{
+    font-size: 20px;
+    margin: 0px;
+}
+
+.achivement{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.communityBadgeTitle{
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0px;
+}
+
+.communityBadgeDes{
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0px;
+}
+
+.communityBadge{
+    background-color: goldenrod;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
+
+.badgeCondition{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.otherOfOther{
+    display: flex;
+    align-items: center;
+}
+
+.complete{
+    color: rgb(11, 112, 11);
+}
+
+.incomplete{
+    color: brown;
+}
+
+.GW{
+    background-color: #00635d;
+}
+
+.Author{
+    background-color: rgb(62, 62, 62);
+}
+
+.RM{
+    background-color: brown;
+}
+
+.achivement:hover{
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+}
+
+.friendAdd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.friendAddBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(245, 245, 245);
+    font-weight: 300;
+    font-size: 20px;
+    background-color: rgb(167, 167, 167);
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+}
+
+.friendAdd:hover{
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+}
+
+.friendsList{
+    margin: 5px 0px;
+}
+
+.friendName{
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0px 10px;
+}
+
+.hrTag{
+    margin: 0px;
+}
+
+.liHr{
+    margin: 0px;
+}
+

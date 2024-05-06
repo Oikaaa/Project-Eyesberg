@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/ico" href="./Eyesberg.ico">
+    <title>Admin hub</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Styles for modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: auto;
+        padding: 20px;
+        width: 60%;
+        border-radius: 5px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      td{
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <h1>Admin System</h1>
+
+    <!-- Button to open the create book -->
+    <button onclick="openCreateModal()">Create Book</button>
+
+    <!-- Modal for creating a new book -->
+    <div id="createModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCreateModal()">&times;</span>
+        <h3>Create New Product</h3>
+        <form id="createForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required /><br /><br />
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" required /><br /><br />
+          <label for="rate">Rate:</label>
+          <input type="text" id="rate" name="rate" required /><br /><br />
+          <label for="like">Like:</label>
+          <input type="text" id="like" name="like" required /><br /><br />
+          <label for="content">Content:</label>
+          <input type="text" id="content" name="content" required /><br /><br />
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" required /><br /><br />
+          <label for="salePrice">Sale Price:</label>
+          <input
+            type="text"
+            id="salePrice"
+            name="salePrice"
+            required
+          /><br /><br />
+          <label for="saleRate">Sale Rate:</label>
+          <input
+            type="text"
+            id="saleRate"
+            name="saleRate"
+            required
+          /><br /><br />
+          <label for="type">Type:</label>
+          <input type="text" id="type" name="type" required /><br /><br />
+          <label for="imageURL">Image URL:</label>
+          <input
+            type="text"
+            id="imageURL"
+            name="imageURL"
+            required
+          /><br /><br />
+          <label for="format">Format:</label>
+          <input type="text" id="format" name="format" required /><br /><br />
+          <label for="publishedDate">Published Date:</label>
+          <input type="text" id="publishedDate" name="publishedDate" required /><br /><br />
+          <label for="published">Published:</label>
+          <input type="checkbox" id="published" name="published" /><br /><br />
+          <button type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+    <!----------Edit------------->
+
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h3>Edit Book</h3>
+        <form id="editForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name1" name="name" required /><br /><br />
+          <label for="author">Author:</label>
+          <input type="text" id="author1" name="author" required /><br /><br />
+          <label for="description">Description:</label>
+          <input type="text" id="description1" name="description" required /><br /><br />
+          <label for="rate">Rate:</label>
+          <input type="text" id="rate1" name="rate" required /><br /><br />
+          <label for="like">Like:</label>
+          <input type="text" id="like1" name="like" required /><br /><br />
+          <label for="content">Content:</label>
+          <input type="text" id="content1" name="content" required /><br /><br />
+          <label for="price">Price:</label>
+          <input type="text" id="price1" name="price" required /><br /><br />
+          <label for="salePrice">Sale Price:</label>
+          <input
+            type="text"
+            id="salePrice1"
+            name="salePrice"
+            required
+          /><br /><br />
+          <label for="saleRate">Sale Rate:</label>
+          <input
+            type="text"
+            id="saleRate1"
+            name="saleRate"
+            required
+          /><br /><br />
+          <label for="type">Type:</label>
+          <input type="text" id="type1" name="type" required /><br /><br />
+          <label for="imageURL">Image URL:</label>
+          <input
+            type="text"
+            id="imageURL1"
+            name="imageURL"
+            required
+          /><br /><br />
+          <label for="format">Format:</label>
+          <input type="text" id="format1" name="format" required /><br /><br />
+          <label for="publishedDate">Published Date:</label>
+          <input type="text" id="publishedDate1" name="publishedDate" required /><br /><br />
+          <label for="published">Published:</label>
+          <input type="checkbox" id="published1" name="published" /><br /><br />
+          <button type="submit">Edit</button>
+        </form>
+      </div>
+    </div>
+
+    <table id="bookTable" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Author</th>
+          <th class="des">Description</th>
+          <th>Rate</th>
+          <th>Like</th>
+          <th>Content</th>
+          <th>Price</th>
+          <th>Sale Price</th>
+          <th>Sale Rate</th>
+          <th>Type</th>
+          <th>Image URL</th>
+          <th>Published</th>
+          <th>format</th>
+          <th>publishedDate</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      const bookTable = document
+        .getElementById("bookTable")
+        .getElementsByTagName("tbody")[0];
+      const createModal = document.getElementById("createModal");
+      const editModal = document.getElementById("editModal");
+
+      // Fetch and display all tutorials (similar to your previous code)
+      // ...
+
+      // Open the create modal
+      function openCreateModal() {
+        createModal.style.display = "block";
+      }
+
+      // Close the create modal
+      function closeCreateModal() {
+        createModal.style.display = "none";
+      }
+      // Open the create modal
+      function openEditModal(id) {
+        editModal.style.display = "block";
+        
+      // Function to display the data to the edit box
+        const name1 = document.getElementById("name1");
+        const author1 = document.getElementById("author1");
+        const description1 = document.getElementById("description1");
+        const rate1 = document.getElementById("rate1");
+        const like1 = document.getElementById("like1");
+        const content1 = document.getElementById("content1");
+        const price1 = document.getElementById("price1");
+        const salePrice1 = document.getElementById("salePrice1");
+        const saleRate1 = document.getElementById("saleRate1");
+        const type1 = document.getElementById("type1");
+        const imageURL1 = document.getElementById("imageURL1");
+        const format1 = document.getElementById("format1");
+        const publishedDate1 = document.getElementById("publishedDate1");
+        const published1 = document.getElementById("published1");
+
+        fetch("http://localhost:8080/api/books")
+        .then((response) => response.json())
+        .then((data) => {
+          const book = data.find((book)=> book.id === id)
+          name1.value = book.name
+          author1.value = book.author
+          description1.value = book.description
+          rate1.value = book.rate
+          like1.value = book.like
+          content1.value = book.content
+          price1.value = book.price
+          salePrice1.value = book.salePrice
+          saleRate1.value = book.saleRate
+          type1.value = book.type
+          imageURL1.value = book.imageURL
+          format1.value = book.format
+          publishedDate1.value = book.publishedDate          
+        })
+        .catch((error) => console.error("Error fetching tutorials:", error));
+      }
+
+      // Close the create modal
+      function closeEditModal() {
+        editModal.style.display = "none";
+      }
+      // Handle form submission for creating a new book
+      document
+        .getElementById("createForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const author = document.getElementById("author").value;
+          const description = document.getElementById("description").value;
+          const rate = document.getElementById("rate").value;
+          const like = document.getElementById("like").value;
+          const content = document.getElementById("content").value;
+          const price = document.getElementById("price").value;
+          const salePrice = document.getElementById("salePrice").value;
+          const saleRate = document.getElementById("saleRate").value;
+          const type = document.getElementById("type").value;
+          const imageURL = document.getElementById("imageURL").value;
+          const format = document.getElementById("format").value;
+          const publishedDate = document.getElementById("publishedDate").value;
+          const published = document.getElementById("published").checked;
+
+          const newBook = {
+            name: name,
+            author: author,
+            description: description,
+            rate: rate,
+            like: like,
+            content: content,
+            price: price,
+            salePrice: salePrice,
+            saleRate: saleRate,
+            type: type,
+            imageURL: imageURL,
+            format: format,
+            publishedDate: publishedDate,
+            published: published,
+          };
+
+          // Send the new books data to your API for creation
+          fetch("http://localhost:8080/api/books", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newBook),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert("Tutorial created successfully.");
+              location.reload();
+            })
+            .catch((error) => console.error("Error creating tutorial:", error));
+
+          closeCreateModal();
+        });
+
+      // Fetch and display all books
+      fetch("http://localhost:8080/api/books")
+        .then((response) => response.json())
+        .then((data) => {
+          data.forEach((book) => {
+            bookTable.innerHTML += `
+                    <tr>
+                        <td>${book.id}</td>
+                        <td>${book.name}</td>
+                        <td>${book.author}</td>
+                        <td class="des">${book.description}</td>
+                        <td>${book.rate}</td>
+                        <td>${book.like}</td>
+                        <td>${book.content}</td>
+                        <td>${book.price}</td>
+                        <td>${book.salePrice}</td>
+                        <td>${book.saleRate}</td>
+                        <td>${book.type}</td>
+                        <td>${book.imageURL}</td>
+                        <td>${book.format}</td>
+                        <td>${book.publishedDate}</td>
+                        <td>${book.published}</td>
+                        <td>
+                            <button onclick="editTutorial(${book.id})">Edit</button>
+                            <button onclick="deleteTutorial(${book.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+          });
+        })
+        .catch((error) => console.error("Error fetching tutorials:", error));
+
+      // Function to delete a tutorial
+      function deleteTutorial(id) {
+        fetch(`http://localhost:8080/api/books/${id}`, {
+          method: "DELETE",
+        })
+          .then(() => {
+            alert("Tutorial deleted successfully.");
+            location.reload();
+          })
+          .catch((error) => console.error("Error deleting tutorial:", error));
+      }
+
+      // Function to edit a book
+      function editTutorial(id) {
+        openEditModal(id);
+        document
+          .getElementById("editForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name1 = document.getElementById("name1").value;
+            const author1 = document.getElementById("author1").value;
+            const description1 = document.getElementById("description1").value;
+            const rate1 = document.getElementById("rate1").value;
+            const like1 = document.getElementById("like1").value;
+            const content1 = document.getElementById("content1").value;
+            const price1 = document.getElementById("price1").value;
+            const salePrice1 = document.getElementById("salePrice1").value;
+            const saleRate1 = document.getElementById("saleRate1").value;
+            const type1 = document.getElementById("type1").value;
+            const imageURL1 = document.getElementById("imageURL1").value;
+            const format1 = document.getElementById("format1").value;
+            const publishedDate1 = document.getElementById("publishedDate1").value;
+            const published1 = document.getElementById("published1").checked;
+
+
+            const bookTutorial = {
+              name: name1,
+              author: author1,
+              description: description1,
+              rate: rate1,
+              like: like1,
+              content: content1,
+              price: price1,
+              salePrice: salePrice1,
+              saleRate: saleRate1,
+              type: type1,
+              imageURL: imageURL1,
+              format: format1,
+              publishedDate: publishedDate1,
+              published: published1,
+            };
+            console.log(editTutorial);
+            // Send the new book data to your API for creation
+            fetch(`http://localhost:8080/api/books/${id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(bookTutorial),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                alert("Tutorial edited successfully.");
+                location.reload();
+              })
+              .catch((error) => console.error("Error edit tutorial:", error));
+
+            closeEditModal();
+          });
+      }
+   </script>
+   
+  </body>
+</html>

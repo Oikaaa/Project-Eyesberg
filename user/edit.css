@@ -1,0 +1,260 @@
+.container{
+    padding: 100px 15%;
+}
+
+.accountSe{
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.aset{
+    font-size: 15px;
+    text-decoration: none;
+    color: #00635d;
+    font-weight: 500;
+}
+
+.aset:hover{
+    text-decoration: underline;
+}
+
+.edUl{
+    padding: 0px;
+    margin: 20px 0px 0px 0px;
+    list-style: none;
+    display: flex;
+}
+
+.edLi{
+    padding: 8px 30px;
+    margin: 0px 10px 0px 0px;
+    transition: 0.5s;
+}
+
+.edLi:hover{
+    box-shadow: 0px 3px black;
+    cursor: pointer;
+}
+
+.edLiH1{
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.hrTagEd{
+    margin: 2px 0px;
+}
+
+.current{
+    background-color: white;
+    box-shadow: 0px 3px black;
+}
+
+.inputNS{
+    width: 250px;
+    height: 23px;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-radius: 5px;
+    border-width: 1px ;
+    font-size: 15px;
+    padding: 2px;
+}
+
+.pN{
+    font-size: 25px;
+    margin: 5px 0px;
+    font-weight: 500;
+}
+
+.pNp{
+    margin: 0px;
+    font-weight: 300;
+}
+
+.inpL{
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.required{
+    color: red;
+}
+
+.inpRP{
+    margin: 0px;
+    font-weight: 300;
+}
+
+.inpRPO{
+    font-size: 15px;
+}
+
+.heBI{
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0px;
+}
+
+.inputNSDOB{
+    width: 75px;
+    height: 23px;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-radius: 5px;
+    border-width: 1px ;
+    font-size: 15px;
+    padding: 2px;
+}
+
+.desHolder{
+    width: 600px;
+    height: 200px;
+    text-align: left;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-radius: 5px;
+    border-width: 1px ;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    padding: 2px;
+}
+
+.savebtn{
+    background-color: rgb(66, 117, 66);
+    height: 45px;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    border-style: none;
+}
+
+.savebtn:hover{
+    cursor: pointer;
+    background-color: rgb(39, 62, 39);
+}
+
+.userAvatar{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.photo{
+    border-radius: 0px;
+}
+
+.note{
+    color: gray;
+    font-style: italic;
+    font-size: 13px;
+    width: 250px;
+    text-align: justify;
+}
+
+.las{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.savedAnn{
+    position: fixed;
+    right: -350px;
+    top: 100px;
+    background-color: white;
+    width: 300px;
+    padding: 5px 20px;
+    border-bottom: 4px solid rgb(24, 163, 24);
+    box-shadow: 0px 0px 30px rgb(192, 192, 192);
+}
+
+.savedAnn:hover{
+    cursor: pointer;
+    scale: 1.01;
+}
+
+.savedAnHd{
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.check{
+    color: rgb(24, 163, 24);
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.emailVer{
+    background-color: white;
+    border: none;
+    padding: 13px;
+    font-size: 15px;
+    color: black;
+    border: 3px solid black;
+}
+
+.emailVer:hover{
+    cursor: pointer;
+}
+
+.edLD{
+    background-color: black;
+    border: none;
+    padding: 13px;
+    font-size: 15px;
+    color: white;
+}
+
+.edLD:hover{
+    cursor: pointer;
+}
+
+.notee{
+    margin: 0px;
+    font-size: 13px;
+    color: rgb(167, 167, 167);
+    font-style: italic;
+}
+
+.changeHd{
+    margin: 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.changesHdd{
+    margin: 1px 0px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.btnChange{
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.emailChange{
+    width: 300px;
+    height: 25px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(163, 163, 163);
+}
+
+.btnChange:hover{
+    cursor: pointer;
+}
+
+.policyDummy{
+    font-weight: 600;
+}

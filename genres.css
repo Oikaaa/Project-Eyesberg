@@ -1,0 +1,130 @@
+.base{
+    padding: 130px 10%;
+}
+
+.genreUl{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.genre{
+    background-color: white;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: 0px 0px 20px rgb(208, 208, 208);
+}
+
+.genre:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    
+}
+
+.current{
+    background-color: black;
+    transform: translateY(-5px);
+    color: white;
+    box-shadow: 0px 0px 20px rgb(208, 208, 208);
+
+}
+
+.type{
+    text-align: center;
+    font-size: 40px;
+    margin: 26px 0px 0px 0px;
+}
+
+.typeSlogan{
+    text-align: center;
+    margin: 0px;
+    width: 700px;
+}
+
+.shelf{
+    margin: 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+/*---------*/
+
+.bookG{
+    display: flex;
+    width: 550px;
+    margin: 10px;
+    transition: 0.5s;
+    height: 210px;
+}
+
+.imgG{
+    height: 210px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
+    transition: 0.2s;
+}
+
+.detailG{
+    padding: 0px 10px;
+    height: 210px;
+}
+
+.hdG{
+    margin: 0px;
+    font-size: 20px;
+}
+
+.ratingG{
+    display: flex;
+    align-items: center;
+}
+
+.rate{
+    margin: 0px 2px;
+}
+
+.like{
+    margin: 0px;
+}
+
+.desG{
+    margin: 0px;
+    text-overflow: ellipsis;
+    max-height: 77px;
+    overflow: hidden;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.star{
+    color: goldenrod;
+}
+
+.priceG{
+    margin: 0px;
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    color: rgb(44, 96, 44);
+}
+
+.bookG:hover{
+    cursor: pointer;background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+    scale: 1.05;
+    box-shadow: 0px 0px 30px rgb(148, 148, 148);
+}
+
+.bookDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

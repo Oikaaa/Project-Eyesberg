@@ -1,0 +1,37 @@
+.wcontainer{
+    margin: 100px 10%;
+}
+
+.wwcontainer{
+    display: flex;
+    justify-content: left;
+}
+
+
+.wBookImage{
+    width: 150px;
+    aspect-ratio: 1/1.5;
+}
+
+.navigation{
+    top: 0px;
+}
+
+.woverflow{
+    overflow: hidden;
+    width: 150px;
+    aspect-ratio: 1/1.5;
+    box-shadow: 0px 0px 10px rgb(103, 103, 103);
+}
+
+.wBookHeader{
+    margin: 0px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.wBookAuthor{
+    margin: 0px;
+    font-size: 15px;
+    text-align: center;
+}

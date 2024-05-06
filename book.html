@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="./Eyesberg.ico">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./book.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="margin: 0px; font-family: Poppins, sans-serif;">
+    <div class="navigation" id="navigation">
+        <div class="naviField">
+            <ul class="naviList">
+                <li class="li"><a class="list" href="./index.html">Home</a></li>
+                <li class="li"><a class="list" href="./trending.html">Trending</a></li>
+                <li class="li"><a class="list" href="./genres.html">Genres</a></li>
+                <li class="li"><a class="list" href="./library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="profileField">
+            <div class="featureIcon">
+                <i class="fa fa-search search naviFa" aria-hidden="true"></i>
+                <i class="fa fa-bell naviFa" aria-hidden="true"></i>
+            </div>
+            <div class="profile" id="profile" onmouseover="profileDrop()" onmouseout="profileOut()">
+                <div style="display: flex; align-items: center;">
+                    <img class="avatar" id="avatar" src="./image/guest_avatar.jpg" alt="Photo">
+                    <h5 id="nameField" class="nameField">Sign In</h5>
+                </div>
+                <i class="fa fa-sort-desc naviFaP" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="profileDropdown" onmouseover="profileDrop()" onmouseout="profileOut()" id="profileDropdown" style="display: none;">
+        <ul class="profileList">
+            <li class="profileNavi gotoProfile">Profile</li>
+            <li class="profileNavi gotoWishlist">Wishlist</li>
+            <li class="profileNavi gotoCart">Cart</li>
+            <li style="height: 1px; background-color: rgb(197, 197, 197);"></li>
+            <li class="profileNavi gotoSetting">Setting</li>
+            <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
+        </ul>
+    </div>
+    <div id="display" class="display">
+        <div class="cover" id="cover">
+            <div class="sticky">
+              <div style="display: flex; justify-content: center;">
+                  <img class="bookCover" id="bookCover" src="./image/imageLoading.png" alt="">
+              </div>
+              <div>
+                  <div class="buy">
+                      <button class="buyOption">Buy Now</button>
+                      <div class="borderBtw"></div>
+                      <button id="moreOption" class="otherOption"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                  </div>
+                  <div style="display: none;" id="buyOther" class="buyOther">
+                    <ul style="list-style: none; padding: 0px; margin: 0px; z-index: 99;">
+                        <li id="wl" class="buyLi wl">Wishlist</li>
+                        <li id="sv" class="buyLi sv">Save</li>
+                    </ul>
+                  </div>
+                  <div class="rent">
+                      <button class="rentOption">Rent</button>
+                      <div class="borderBtw rentBorder"></div>
+                      <button class="durationOption"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                  </div>
+                  <div id="starRating" style="display: flex; justify-content: center; margin-top: 10px;">
+                      <i class="fa starO fa-star-o " id="star1" onmouseover="star1()" onmouseout="starReset()"  aria-hidden="true"></i>
+                      <i class="fa starO fa-star-o " id="star2" onmouseover="star2()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starO fa-star-o " id="star3" onmouseover="star3()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starO fa-star-o " id="star4" onmouseover="star4()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starO fa-star-o " id="star5" onmouseover="star5()" onmouseout="starReset()" aria-hidden="true"></i>
+                  </div>  
+                  <p style="text-align: center; margin: 5px 0px 0px 0px;">Rate this book</p>
+              </div>
+            </div>
+        </div>
+        <div class="detail">
+            <h1 class="header" id="header">Loading...</h1>
+            <h1 class="author" id="author">Loading...</h1>
+            <div class="rating" id="rating">
+                  <i class="fa star fa-star" aria-hidden="true"></i>
+                  <i class="fa star fa-star" aria-hidden="true"></i>
+                  <i class="fa star fa-star" aria-hidden="true"></i>
+                  <i class="fa star fa-star" aria-hidden="true"></i>
+                  <i class="fa star fa-star" aria-hidden="true"></i>
+                  9.8
+              </div>
+              <h1 class="price" id="price"><sup style="font-size: 30px;">$</sup>N/A</h1>
+              <p id="desc" style="font-weight: 300;"><span style="font-weight: 600; font-style: italic;">Loading...</span> <br> <br>
+                Loading...
+              </p>
+              <div class="tags" id="tags">
+                  <h1 style="font-weight: 400; font-size: 16px;">Genres:</h1>
+                  <div id="tagGenre">
+
+                  </div>
+              </div>
+              <div class="edition" id="edition">
+                  <h1 class="ediHd">This Edition</h1>
+                  <div class="format"><p class="cons">Format</p><p class="con">Loading...</p></div>
+                  <div class="format"><p class="cons">Published</p><p class="con">Loading...</p></div>
+              </div>
+              <div class="static" id="static">
+                  <hr>
+                  <div style="display: flex; justify-content: space-around;">
+                      <p class="stat">Loading...</p>
+                      <p class="stat">Loading...</p>
+                  </div>
+                  <hr>
+              </div>
+              <div class="author" id="authorInf">
+                  <h1 style="font-size: 25px; font-weight: 600;">About the author</h1>
+                  <div class="authorInfo">
+                      <div class="authorDetail">
+                          <div><img class="authorImg" src="./image/guest_avatar.jpg" alt=""></div>
+                          <div style="padding: 10px;">
+                              <h1 class="auName">Loading...</h1>
+                              <p class="auFollower">Loading...</p>
+                          </div>
+                      </div>
+                      <button class="follow">Follow</button>
+                  </div>
+                  <hr>
+              </div>
+              <div class="suggest">
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <h1 class="sugHd">People also read</h1>
+                      <div>
+                          <i id="prevbtn" class="fa nextbtn previous fa-angle-left" aria-hidden="true"></i>
+                          <i id="nextbtn" class="fa next nextbtn fa-angle-right" aria-hidden="true"></i>
+                      </div>
+                  </div>
+                  <div class="shelf" id="shelf">
+                        <div class="suggBook">
+                            <div style="height: 300px;box-shadow: 0px 0px 30px gray;overflow: hidden; border-radius: 0px 15px 15px 0px;"><img class="suggImg" src="./image/imageLoading.png" alt=""></div>
+                            <div>
+                                <h1 class="suggName">Loading...</h1>
+                                 <p class="suggAuth">Loading...</p>
+                                <div style="display: flex; justify-content: left;">
+                                    <p class="det suggRate"><i class="fa suggStar fa-star" aria-hidden="true"></i>N/A</p>
+                                    <p class="det suggLike">- N/A</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="suggBook">
+                            <div style="height: 300px;box-shadow: 0px 0px 30px gray;overflow: hidden; border-radius: 0px 15px 15px 0px;"><img class="suggImg" src="./image/imageLoading.png" alt=""></div>
+                            <div>
+                                <h1 class="suggName">Loading...</h1>
+                                <p class="suggAuth">Loading...</p>
+                                <div style="display: flex; justify-content: left;">
+                                    <p class="det suggRate"><i class="fa suggStar fa-star" aria-hidden="true"></i>N/A</p>
+                                    <p class="det suggLike">- N/A</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="suggBook">
+                            <div style="height: 300px;box-shadow: 0px 0px 30px gray;overflow: hidden; border-radius: 0px 15px 15px 0px;"><img class="suggImg" src="./image/imageLoading.png" alt=""></div>
+                            <div>
+                                <h1 class="suggName">Loading...</h1>
+                                <p class="suggAuth">Loading...</p>
+                                <div style="display: flex; justify-content: left;">
+                                    <p class="det suggRate"><i class="fa suggStar fa-star" aria-hidden="true"></i>N/A</p>
+                                    <p class="det suggLike">- N/A</p>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+
+    <div class="footer">
+            <div class="upperFooter">
+                <div>
+                    <h1 class="logoName">EYES<span style="font-weight: 200;">BERG</span></h1>
+                    <p class="slogan">"Embark on a Literary Journey with Our Vast Ebook Library: Where Every Page is a Portal to Infinite Worlds of Imagination and Knowledge!"</p>
+                </div>
+                <div>
+                    <h1 class="footerListHeader">TEAMS</h1>
+                    <ul class="footerUl">
+                        <li class="footerlist"><a class="footerListA" class="footerListA" href="">About Us</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Guidlines</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="footerListHeader">Services</h1>
+                    <ul class="footerUl">
+                        <li class="footerlist"><a class="footerListA" href="">Help center</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Q&A</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Privacy Policy</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Terms of service</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Vision</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Affiliate</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Careers</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="footerListHeader">Discover</h1>
+                    <ul class="footerUl">
+                        <li class="footerlist"><a class="footerListA" href="">Home</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Books</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Author</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Subjects</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Advance Search</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="footerListHeader">My Account</h1>
+                    <ul class="footerUl">
+                        <li class="footerlist"><a class="footerListA" href="">Sign In</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">View Cart</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">My Wishlist</a></li>
+                        <li class="footerlist"><a class="footerListA" href="">Library</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottomFooter">
+                <hr>
+                <div class="bottomFooterContainer">
+                    <p>@2024 Eyesberg</p>
+                    <div class="social">
+                        <i class="fa faSocial fa-facebook-square" aria-hidden="true"></i>
+                        <i class="fa faSocial fa-twitter" aria-hidden="true"></i>
+                        <i class="fa faSocial fa-youtube-play" aria-hidden="true"></i>
+                        <i class="fa faSocial fa-instagram" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./backend/book.js"></script>
+</body>
+</html>

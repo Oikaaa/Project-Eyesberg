@@ -1,0 +1,855 @@
+.navigation{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 65px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 1px 4px rgb(156, 156, 156);
+    background-color: white;
+    z-index: 100;
+}
+
+.naviField{
+    margin-left: 100px;
+}
+
+.naviList{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list{
+    color: black;
+    text-decoration: none;
+    padding: 21.75px;
+    transition: 0.3s ease-in-out;
+}
+
+.list:hover{
+    background-color: rgb(63, 63, 63);
+    color: white;
+}
+
+.li{
+    list-style: none;
+}
+
+.naviFa{
+    color: black;
+    padding: 23.5px 20px;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+.naviFaP{
+    color: rgb(63, 63, 63);;
+    font-size: 18px;
+    padding: 23.5px 20px;
+}
+
+.naviFa:hover{
+    background-color: rgb(63, 63, 63);;
+    color: white;
+    cursor: pointer;
+}
+
+.profileField{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+
+.featureIcon{
+    width: fit-content;
+    display: flex;
+    justify-content: end;
+}
+
+.nameField{
+    margin: 0px;
+    font-weight: 300;
+    width: 100px;
+    font-size: 15px;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    height: 65px;
+    justify-content: space-between;
+    box-shadow: 1px 0px rgb(237, 237, 237) inset;
+}
+
+.profile:hover{
+    background-color: rgb(63, 63, 63);;
+    color: white;
+    cursor: pointer;
+    .naviFaP{
+        color: white;
+    }
+}
+
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0px 20px 0px 10px;
+    object-fit: cover;
+    border: solid rgb(162, 162, 162) 1px;
+}
+
+.wName{
+    margin: 0px;
+}
+
+.webName{
+    display: flex;
+    align-items: center;
+}
+
+/*/---------------------/*/
+
+.body{
+    padding: 100px 230px;
+}
+
+.carousel{
+    padding-top: 65px;
+    width: 100%;
+    height: 530px;
+}
+
+.carouselImg{
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+    object-position: 0px 30%;
+}
+
+.featureCarousel{
+    position: absolute;
+    bottom: 320px;
+    right: 240px;
+    height: 60px;
+    width: 180px;
+    background-color: white;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+.featureCarousel:hover{
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(240, 240, 240);
+    color: black;
+    cursor: pointer;
+}
+
+.trendingCarousel{
+    position: absolute;
+    bottom: 320px;
+    right: 40px;
+    height: 60px;
+    width: 180px;
+    background-color: #e9e4e0;
+    color: black;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.trendingCarousel:hover{
+    background-color: rgb(214, 209, 206);
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+/*/-----/*/
+
+.fC{
+    text-align: center;
+    margin: 0px;
+}
+
+.weeklyTopPick{
+    margin-bottom: 100px;
+}
+
+.topPick{
+    display: flex;
+    justify-content: space-between;
+}
+
+.topNovel{
+    width: min-content;
+    box-shadow: 1px 1px 3px black;
+    transition: 0.5s;
+}
+
+.topNovel:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 6px black;
+}
+
+.weeklyHeader{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 20px 0px 0px 0px;
+}
+
+.topImg{
+    height: 300px;
+    width: 225.07px;
+}
+
+.topTitle{
+    word-wrap: break-word;
+    margin: 10px 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.weeklyP{
+    text-align: center;
+    margin: 0px 0px 50px 0px;
+}
+
+/*/-------/*/
+
+.bestSellingBook{
+    background-color: rgb(240, 237, 231);
+    height: fit-content;
+    padding: 125px;
+    font-family: "Merriweather", serif;
+}
+
+.bestHeader{
+    text-align: left;
+    font-weight: 500;
+    font-size: 50px;
+    margin: 0px;
+}
+
+.bestDiv{
+    justify-content: center;
+    display: flex;
+}
+
+.bestBookImg{
+    width: 346px;
+    height: 500px;
+    border: rgb(249, 248, 246) solid 20px;
+}
+
+.bestLine{
+    margin: 20px 0px 50px 0px;
+}
+
+.bestDetail{
+    width: 400px;
+    padding: 50px;
+}
+
+.bestAuthor{
+    color: rgb(52, 52, 52);
+}
+
+.bestBookHeader{
+    font-weight: 400;
+}
+
+.bestDes{
+    color: rgb(52, 52, 52);
+}
+
+.bestShop{
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
+}
+
+.bestShop:hover{
+    cursor: pointer;
+    color: rgb(87, 68, 19);
+    text-decoration: underline;
+}
+
+.bestPrice{
+    font-size: 30px;
+    color: rgb(44, 96, 44);
+}
+
+
+
+/*/----/*/
+.feature{
+    background-color: rgb(255, 255, 255);
+    height: fit-content;
+    padding: 50px;
+    font-family: "Merriweather", serif;
+    margin: 70px 0px;
+}
+
+.featureDes{
+    text-align: center;
+    margin-bottom: 50px;
+    color: gray;
+}
+
+.featureHeaderLine{
+    width: 400px;
+    height: 0px;
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.featureContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.featurePrice{
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(44, 96, 44);
+}
+
+.featureBookImg{
+    width: 130px;
+    aspect-ratio: 1/1.5;
+    transition: 1s;
+    object-fit: cover;
+}
+
+.featureBookImg:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+    
+}
+
+.featureHeader{
+    text-align: center;
+    font-size: 60px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+.featureBookHeader{
+    margin: 5px;
+    text-align: center;    
+    font-weight: 500;
+    font-size: 15px;
+    width: 100%;
+    text-wrap: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.featureBookAuthor:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.bookDiv{
+    margin: 10px 0px;
+    width: 130px;
+}
+
+.bookCB{
+    margin: 20px 0px;
+    width: 269.64px;
+}
+
+.overflow{
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgb(133, 133, 133);
+    width: 130px;
+    aspect-ratio: 1/1.5;
+}
+
+.featureBookAuthor{
+    text-align: left;
+    margin: 0px;
+    color: gray;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+}
+
+.featureBookHeader:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*/---------/*/
+.quote{
+    text-align: center;
+    font-family: "Merriweather", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px 50px 50px;
+}
+
+.quoteHeader{
+    font-size: 55px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.quoteLine{
+    width: 100px;
+}
+
+.theQuote{
+    font-size: 30px;
+    text-wrap: wrap;
+    width: 700px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    color: rgb(44, 44, 44);
+    margin: 15px;
+}
+
+.quoteAuthor{
+    margin: 80px;
+    font-size: 20px;
+}
+
+/*/-----/*/
+.CommunityChoice{
+    background-color: rgb(243, 241, 237);
+    font-family: "Merriweather", serif;
+    padding: 50px;
+}
+
+.communityContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.communityHeader{
+    text-align: center;
+    font-size: 55px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+.communityBookImg{
+    width: 190;
+    height: 271px;
+    transition: 1s;
+    border: 45px solid rgb(250, 250, 250);
+}
+
+.communityBookImg:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+.overflowCB{
+    overflow: hidden;
+}
+
+.communityHeader{
+    text-align: center;
+    font-size: 60px;
+    margin: 20px;
+    font-weight: 500;
+}
+
+.communityBookHeader{
+    margin: 5px;
+    text-align: center;    
+    font-weight: 500;
+    font-size: 23px;
+    width: 100%;
+    text-wrap: wrap;
+}
+
+.communityBookAuthor:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.bookDiv{
+    margin: 20px 20px;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.communityBookAuthor{
+    text-align: left;
+    margin: 0px;
+    color: gray;
+    text-align: center;
+    width: 100%;
+}
+
+.communityBookHeader:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.communityPrice{
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(44, 96, 44);
+}
+
+.communityHeaderLine{
+    width: 250px;
+    height: 0px;
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.commDes{
+    margin-top: 0px;
+}
+
+/*------------*/
+.genres{
+    padding: 120px 125px;
+}
+
+.genresHeader{
+    font-size: 60px;
+    font-weight: 500;
+    font-family: "Merriweather", serif;
+    margin: 10px 0px 10px 0px;
+}
+
+.genresHeaderLine{
+    width: 400px;
+}
+
+.genresDes{
+    margin: 10px 0px 50px 0px;
+}
+
+.genresContainer{
+    display: flex;
+}
+
+.genreChoosing{
+    min-width: 222px;
+}
+
+.genresChoosingHeader{
+    margin: 0px;
+}
+
+.genresLists{
+    list-style: none;
+    padding: 0px;
+}
+
+.genresListsContext{
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.genresListsContext:hover{
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: white;
+}
+
+.current{
+    background-color: rgb(241, 241, 241);
+
+}
+
+.genresBookshelf{
+    display: flex;
+    flex-direction: column;
+    height: 1082.5px;
+    overflow: scroll;
+}
+
+.genresBookshelf::-webkit-scrollbar{
+    display: none;
+}
+
+.separatedLine{
+    width: 1px;
+    height: 650px;
+    margin: 0px 5px;
+    background-color: rgb(127, 127, 127);
+}
+
+.genresBook{
+    display: flex;
+    transition: 0.5s;
+    min-width: 942px;
+}
+
+.genresImgDiv{
+    padding: 10px;
+}
+
+.genresImg{
+    height: 175px;
+    width: 116.2px;
+    object-fit: cover;
+}
+
+.genresBookDetail{
+    padding: 10px;
+}
+
+.genresBook:hover{
+    cursor: pointer;
+    background-color: rgb(241, 241, 241);
+    border-radius: 15px;
+}
+
+.genresBookHeader{
+    margin: 0px;
+}
+
+.genresBookDes{
+    margin: 10px 0px;
+}
+
+.genresTags{
+    display: flex;
+}
+
+.price{
+    margin: 0px;
+    font-weight: 500;
+    position: relative;
+    font-size: 25px;
+    right: 0px;
+    font-family: "Merriweather", serif;
+    color: rgb(44, 96, 44);
+    margin-right: 50px;
+}
+
+.genresTagsDiv{
+    display: flex;
+    justify-content: space-between;
+    height: 33px;
+}
+
+.tags{
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+/*-------Tags Colors-----------*/
+.romance{
+    background-color: rgb(223, 169, 231);
+}
+
+.fiction{
+    background-color: rgb(214, 214, 214);
+}
+
+.contemporary{
+    background-color: rgb(186, 226, 185);
+}
+
+.weekly{
+    background-color: rgb(227, 211, 131);
+}
+
+.thriller{
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+
+.fantasy{
+    background-color: rgb(89, 23, 119);
+    color: white;
+}
+
+.epic{
+    background-color: rgb(131, 37, 37);
+    color: white;
+}
+
+.paranormal{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.comedy{
+    background-color: rgb(227, 195, 131);
+}
+
+.k-novel{
+    background-color: rgb(105, 150, 196);
+}
+
+.fairy{
+    background-color: rgb(30, 68, 106);
+    color: white;
+}
+
+.psychological{
+    background-color: rgb(68, 12, 12);
+    color: white;
+}
+
+.crime{
+    background-color: rgb(134, 58, 58);
+    color: white;
+}
+
+.horror{
+    background-color: black;
+    color: white;
+}
+
+
+/*/--------------/*/
+.footer{
+    background-color: rgb(243, 241, 237);
+}
+
+.upperFooter{
+    display: flex;
+    justify-content: space-around;
+    padding: 75px 150px;
+}
+
+.logoName{
+    margin: 0px;
+    font-weight: 600;
+}
+
+.slogan{
+    margin: 0px;
+    text-wrap: wrap;
+    width: 200px;
+    color: rgb(87, 87, 87);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.slogan:hover{
+    cursor: default;
+}
+
+.footerListHeader{
+    margin: 0px;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.footerUl{
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+}
+
+.footerListA{
+    text-decoration: none;
+    color: rgb(87, 87, 87);
+}
+
+.footerListA:hover{
+    text-decoration: underline;
+}
+
+.bottomFooterContainer{
+    padding: 35px 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faSocial{
+    font-size: 20px;
+    margin: 16px 10px;
+}
+
+.faSocial:hover{
+    cursor: pointer;
+}
+
+/*-------------*/
+.profileDropdown{
+    position: fixed;
+    top: 65px;
+    right: 0px;
+    width: 222.29px;
+    z-index: 99;
+    box-shadow: -1px 1px 10px rgb(127, 127, 127);
+}
+
+.profileList{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.profileNavi{
+    padding: 13px 5px 13px 28px;
+    width: 222.2;
+    background-color: white;
+    text-align: left;
+    transition: 0.15s;
+}
+
+.profileNavi:hover{
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.logout{
+    color: red;
+}
+
+.logout:hover{
+    background-color: rgb(168, 76, 76);
+    color: white;
+}
+
+.profile:hover{
+    .profileDropdown{
+        display: block;
+    }
+}
+
+.bestContainer:hover{
+    cursor: pointer;
+}

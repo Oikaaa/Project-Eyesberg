@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="../Eyesberg.ico">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="margin: 0px; font-family: Poppins, sans-serif;">
+    <div class="navigation" id="navigation">
+        <div class="naviField">
+            <ul class="naviList">
+                <li class="li"><a class="list" href="../index.html">Home</a></li>
+                <li class="li"><a class="list" href="../trending.html">Trending</a></li>
+                <li class="li"><a class="list" href="../genres.html">Genres</a></li>
+                <li class="li"><a class="list" href="../library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="profileField">
+            <div class="featureIcon">
+                <i class="fa fa-search search naviFa" aria-hidden="true"></i>
+                <i class="fa fa-bell naviFa" aria-hidden="true"></i>
+            </div>
+            <div class="profile" id="profile" onmouseover="profileDrop()" onmouseout="profileOut()">
+                <div style="display: flex; align-items: center;">
+                    <img class="avatar" id="avatar" src="../image/guest_avatar.jpg" alt="">
+                    <h5 id="nameField" class="nameField">Sign In</h5>
+                </div>
+                <i class="fa fa-sort-desc naviFaP" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="profileDropdown" onmouseover="profileDrop()" onmouseout="profileOut()" id="profileDropdown" style="display: none;">
+        <ul class="profileList">
+            <li class="profileNavi gotoProfile">Profile</li>
+            <li class="profileNavi gotoWishlist">Wishlist</li>
+            <li class="profileNavi gotoCart">Cart</li>
+            <li style="height: 1px; background-color: rgb(197, 197, 197);"></li>
+            <li class="profileNavi gotoSetting">Setting</li>
+            <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1 class="accountSe">Account Setting <a class="aset" href="./profile.html">View my profile</a></h1>
+        <ul class="edUl">
+            <li class="edLi ped current"><h1 class="edLiH1">Profile</h1></li>
+            <li class="edLi set"><h1 class="edLiH1">Setting</h1></li>
+            <li class="edLi emd"><h1 class="edLiH1">Email</h1></li>
+            <li class="edLi apd"><h1 class="edLiH1">Apps</h1></li>
+            <li class="edLi pmd"><h1 class="edLiH1">Payment Method</h1></li>
+        </ul>
+        <hr class="hrTagEd">
+        <div class="edDisplay ped" style="display: block;">
+            <div style="display: flex">
+                <div class="nameSet">
+                    <h1 class="pN">Personal Name</h1>
+                    <p class="pNp">Manage how you will appear across Eyesberg</p>
+                    <p class="inpP">
+                        <label class="inpL" for="display_name">Display name<span class="required">*</span></label>
+                        <br>
+                        <input class="inputNS require" id="dpname" value = "Display_name" type="text" required>
+                    </p>
+                    <p class="inpP">
+                        <label class="inpL" for="fName">First Name<span class="required">*</span></label>
+                        <br>
+                        <input class="inputNS require" id="fname" value = "First Name" type="text" required>
+                    </p>
+                    <p class="inpP">
+                        <label class="inpL" for="lName">Last Name<span class="required">*</span></label>
+                        <br>
+                        <input class="inputNS require" id="lname" value = "Last Name" type="text" required>
+                    </p>
+                    <form class="inpP" id="inpP">
+                        <p class="inpRP">Show my name on profile for:</p>
+                        <input id="anyone" class="radioP" value="true" type="radio" name="option">
+                        <label class="inpRPO" for="any1">Anyone</label><br>
+                        <input id="noone" class="radioP"  value="false" type="radio" name="option" checked>
+                        <label class="inpRPO" for="01">No one</label>
+                        <p class="notee">Note: this will replace your display name with your first and last name</p>
+                    </form>
+                    <h1 class="pN">Account Information</h1>
+                    <p class="pNp">Manage your personality appearance to all the other</p>
+                    <p class="inpP">
+                        <label class="inpL" for="gender">Gender</label>
+                        <br>
+                        <select name="gender" class="inputNS" id="gender">
+                            <option value="male" selected>Male</option>
+                            <option value="female">Female</option>
+                            <option value="lgbt">Prefer not to say</option>
+                        </select>
+                    </p>
+                    <div style="margin: 15px 0px" class="inpP">
+                        <label style="margin: 0px" class="inpL" for="fName">Date Of Birth</label>
+                        <div>
+                            <label class="inpL" for="date">Day:</label> 
+                            <select name="day" class="inputNSDOB" id="day">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <label class="inpL" for="month">Month:</label> 
+                            <select name="month" class="inputNSDOB" id="month">
+                                <option value="Jan" selected>Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Apr</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                            </select>
+                            <label class="inpL" for="year">Year:</label> 
+                            <select name="year" class="inputNSDOB" id="year">
+                                <option value="1969">1969</option>
+                                <option value="1970">1970</option>
+                                <option value="1971">1971</option>
+                                <option value="1972">1972</option>
+                                <option value="1973">1973</option>
+                                <option value="1974">1974</option>
+                                <option value="1975">1975</option>
+                                <option value="1976">1976</option>
+                                <option value="1977">1977</option>
+                                <option value="1978">1978</option>
+                                <option value="1979">1979</option>
+                                <option value="1980">1980</option>
+                                <option value="1981">1981</option>
+                                <option value="1982">1982</option>
+                                <option value="1983">1983</option>
+                                <option value="1984">1984</option>
+                                <option value="1985">1985</option>
+                                <option value="1986">1986</option>
+                                <option value="1987">1987</option>
+                                <option value="1988">1988</option>
+                                <option value="1989">1989</option>
+                                <option value="1990">1990</option>
+                                <option value="1991">1991</option>
+                                <option value="1992">1992</option>
+                                <option value="1993">1993</option>
+                                <option value="1994">1994</option>
+                                <option value="1995">1995</option>
+                                <option value="1996">1996</option>
+                                <option value="1997">1997</option>
+                                <option value="1998">1998</option>
+                                <option value="1999">1999</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024" selected>2024</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h3 class="heBI">Billing Information</h3>
+                    <p class="pNp">For your bill when you're buy or rent a book, we still have to ask you later.</p>
+                    <p class="inpP">
+                        <label class="inpL" for="country">Country<span class="required">*</span></label>
+                        <br>
+                        <select class="inputNS" id="country" name="country" class="form-control require">
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Åland Islands">Åland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Bouvet Island">Bouvet Island</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Cote D'ivoire">Cote D'ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana">French Guiana</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="French Southern Territories">French Southern Territories</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-bissau">Guinea-bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                            <option value="Korea, Republic of">Korea, Republic of</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macao">Macao</option>
+                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfolk Island">Norfolk Island</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn">Pitcairn</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russian Federation">Russian Federation</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Helena">Saint Helena</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                            <option value="Swaziland">Swaziland</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Timor-leste">Timor-leste</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Viet Nam">Viet Nam</option>
+                            <option value="Virgin Islands, British">Virgin Islands, British</option>
+                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                            <option value="Western Sahara">Western Sahara</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                        </select>
+                    </p>
+                    <p class="inpP">
+                        <label class="inpL" for="lName">City</label>
+                        <br>
+                        <input class="inputNS" value = "" placeholder="Kabul" type="text" id="city" required>
+                    </p>
+                    <p class="inpP">
+                        <label class="inpL" for="lName">Zipcode</label>
+                        <br>
+                        <input class="inputNS" value = "" placeholder = '1001' id="zipcode" type="text" required>
+                    </p>
+                    <p class="inpP">
+                        <label class="inpL" for="lName">Address</label>
+                        <br>
+                        <input class="inputNS" value = "" id="address"  type="text" required>
+                    </p>
+                    <h3 class="heBI">Description</h3>
+                    <p class="pNp">The best way to show who you are, will be display on the profile page.</p>
+                    <textarea class="desHolder" value = "" id="descriptionDetail" type="text" placeholder="No more than 250 words" required>Describe yourself...</textarea>
+                    <button class="savebtn" id="savebtn">Save</button>
+                </div>
+                <div class="avatarChanger">
+                    <img src="../image/guest_avatar.jpg" id="userAvatar" class="userAvatar" alt="">
+                    <input class="inputNS photo" type="text" name="photo" placeholder="Photo URL" id="photo"><br>
+                    <p class="note">Note: The avatar only work with image address, mean the link should be an image with the .jpg/.png/or any type of image format. Redo if the image doesn't load fully.</p>
+                </div>
+            </div>
+        </div>
+        <div class="edDisplay set" style="display: none;">
+            <h1 class="pN">Login & security</h1>
+            <p class="pNp">User name and details are used to verify your account and remain private.</p>
+            <ul class="las">
+                <li class="las" id="lasName"><p>Username: </p></li>
+                <li class="las" id="lasEmail"><p>Email: </p></li>
+                <li class="las" id="lasPass"><p>Password: </p></li>
+            </ul>
+            <button class="emailVer" id="verMail">Verify email</button>
+            <button class="edLD" id="edLD">Edit Login Detail</button>
+            <form id="formCh" style="margin: 60px 0px; display: none;">
+                <h1 class="changeHd">Change your login detail</h1>
+                <h1 class="changesHdd">Email changes</h1>
+                <div style="display: flex; align-items: center;">
+                    <div style="display: flex; flex-direction: column;">
+                        <input placeholder="Email" id="emailChange" class="emailChange" type="text">
+                        <input placeholder="Current Password" id="currentEmailChange" class="emailChange" type="text">
+                        <button class="btnChange" id="setMail">Set email</button>
+                    </div>
+                </div>
+                <h1 class="changesHdd">Password changes</h1>
+                <div style="display: flex; align-items: center;">
+                    <div style="display: flex; flex-direction: column;">
+                        <input placeholder="New Password" id="passwordChange" class="emailChange" type="text">
+                        <input placeholder="Current Password" id="currentPass" class="emailChange" type="text">
+                        <button class="btnChange" id="setPass">Change password</button>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <h1 class="pN">Privacy</h1>
+                <p style="padding-right: 20%;"> you control your profile visibility: Public (for everyone), Members Only (registered users only), or Private (only you). Customize visibility for specific sections and choose to show or hide recent activity. Adjust settings anytime, and we'll keep your information secure. However, some setting can still appear somewhere on the sites.</p>
+                <form class="form">
+                    <h3>Who can see your profile?</h3>
+                    <input type="radio" class="pv" value="anyone" name="pv" id="anyonePV" checked>
+                    <label class="anyonePVLb">Anyone</label><br>
+                    <input type="radio" class="pv" value="friends" name="pv" id="friendsPV">
+                    <label class="anyonePVLb">Friends</label><br>
+                    <input type="radio" class="pv" value="noone" name="pv" id="onlyPV">
+                    <label class="anyonePVLb">Only me</label>
+                </form>
+                <form class="form">
+                    <h3>Public your email?</h3>
+                    <input type="radio" class="ep" value="true" name="EP" id="anyoneEP">
+                    <label class="anyonePVLb">Yes, everone can see it</label><br>
+                    <input type="radio" class="ep" value="false" name="EP" id="onlyEP" checked>
+                    <label class="anyonePVLb">No, keep it secret</label><br>
+                </form>
+                <form class="form">
+                    <h3>Enable friend request?</h3>
+                    <input type="radio" class="fr" value="true" name="FP" id="anyoneFP" checked>
+                    <label class="anyonePVLb">Enable</label><br>
+                    <input type="radio" class="fr" value="false" name="FP" id="onlyFP">
+                    <label class="anyonePVLb">Disable</label><br>
+                </form>
+                <button class="savebtn" style="margin-top: 20px;" id="savebtnSet">Save</button>
+            </div>
+        </div>
+        <div class="edDisplay emd" style="display: none;">
+            <form class="form">
+                <h1 style="margin: 0px; font-weight: 500; font-size: 25px;">Email setting</h1>
+                <p style="margin: 0px; margin-bottom: 15px; font-weight: 300;">Keep on track with Eyesberg, we will send you an email to help you up-to-date with the new features!</p>
+                <input type="radio" class="ES" value="true" name="ESS" id="anyoneES" checked>
+                <label class="anyonePVLb">Enable</label><br>
+                <input type="radio" class="ES" value="false" name="ESS" id="onlyES">
+                <label class="anyonePVLb">Disable</label><br>
+            </form>
+            <button class="savebtn" style="margin-top: 20px;" id="savebtnMail">Save</button>
+            <div>
+                <h1 class="policyDummy">Email Update Policy</h1>
+                <p>
+                  We appreciate your interest in receiving updates from us. This policy outlines how we collect and use your email address to send you news and updates.
+                </p>
+                <h2 class="policyDummy">Collection of Email Addresses</h2>
+                <p>
+                  We collect email addresses through various means, including:
+                </p>
+                <ul>
+                  <li>Directly from you when you sign up for our newsletter or register on our website.</li>
+                  <li>Through interactions with our customer support team or sales representatives.</li>
+                  <li>From publicly available sources or third-party services with your consent.</li>
+                </ul>
+                <h2 class="policyDummy">Use of Email Addresses</h2>
+                <p>
+                  We use your email address to:
+                </p>
+                <ul>
+                  <li>Send you updates, newsletters, promotional offers, and other communications related to our products or services.</li>
+                  <li>Notify you about important changes or updates to our policies, terms, or services.</li>
+                  <li>Respond to your inquiries, requests, or feedback.</li>
+                </ul>
+                <h2 class="policyDummy">Opting Out</h2>
+                <p>
+                  You have the right to opt out of receiving promotional emails from us at any time. To unsubscribe, simply click the "Unsubscribe" link provided in the footer of our emails or contact us directly.
+                </p>
+                <h2 class="policyDummy">Security and Privacy</h2>
+                <p>
+                  We are committed to protecting the security and privacy of your email address. We do not sell, rent, or lease our email lists to third parties.
+                </p>
+                <p>
+                  For more information about our privacy practices, please review our <a href="#">Privacy Policy</a>.
+                </p>
+                <p>
+                  If you have any questions or concerns about our email update policy, please contact us at <a href="mailto:info@example.com">info@example.com</a>.
+                </p>
+              </div>
+        </div>
+        <div class="edDisplay apd" style="display: none;">
+        </div>
+    </div>
+    <div class="savedAnn" id="savedAnn">
+        <h1 class="savedAnHd"><i class="fa check fa-check-circle" aria-hidden="true"></i>Changes Saved</h1>
+    </div>
+    <div class="footer">
+        <div class="upperFooter">
+            <div>
+                <h1 class="logoName">EYES<span style="font-weight: 200;">BERG</span></h1>
+                <p class="slogan">"Embark on a Literary Journey with Our Vast Ebook Library: Where Every Page is a Portal to Infinite Worlds of Imagination and Knowledge!"</p>
+            </div>
+            <div>
+                <h1 class="footerListHeader">TEAMS</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" class="footerListA" href="">About Us</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Guidlines</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Services</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Help center</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Q&A</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Privacy Policy</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Terms of service</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Vision</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Affiliate</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Careers</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Donate</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Discover</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Home</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Books</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Author</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Subjects</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Advance Search</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">My Account</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Sign In</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">View Cart</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">My Wishlist</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Library</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottomFooter">
+            <hr>
+            <div class="bottomFooterContainer">
+                <p>@2024 Eyesberg</p>
+                <div class="social">
+                    <i class="fa faSocial fa-facebook-square" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-twitter" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="../backend/edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="./Eyesberg.ico">
+    <link rel="stylesheet" href="./register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0px; font-family: Roboto Condensed, sans-serif; font-optical-sizing: auto; font-style: normal;" >
+    <div class="display">
+        <button class="signUpBtn" onclick="location.href = './sign_in.html';">Sign In</button>
+        <div class="registerHolder">
+            <div class="register">
+                <h1 class="signInHeader">Sign Up</h1>
+                <form class="registerForm" id="registerForm">
+                    <div class="name">
+                        <div class="namePart">
+                            <h5 class="formHeader">First Name</h5>
+                            <input class="inputName" type="text" id="firstName" placeholder="e.g. John">
+                        </div>
+                        <div class="namePart">
+                            <h5 class="formHeader">Last Name</h5>
+                            <input class="inputName" type="text" id="lastName" placeholder="e.g. Doe">
+                        </div>
+                    </div>
+                    <h5 class="formHeader">Username</h5>
+                    <input class="input" type="text" id="username" placeholder="e.g. JohnDoe123">
+                    <h5 class="formHeader">Email</h5>
+                    <input class="input" type="email" id="userEmail" placeholder="">
+                    <h5 class="formHeader">Password</h5>
+                    <input class="input" type="password" id="userPassword" placeholder="">
+                    <p id="lengthAlert" style="margin: 0px; color: red; font-size: 13px; display: none; font-style: italic;">*Password should be more than 6 letters</p>
+                    <h5 class="formHeader">Confirm Password</h5>
+                    <p id="confirmAlert" style="margin: 0px; color: red; font-size: 13px; display: none; font-style: italic;">*Confirm password does not match</p>
+                    <input class="input" type="password" id="confirmPassword" placeholder="">
+                    <button class="submitButton" id="submitButton">Submit</button>
+                </form>
+                <h4>OR</h4>
+                <div class="googleAuth">
+                    <img class="googleImg" src="./image/google.svg.webp" alt="">
+                    <p class="googleLine">Sign In with google</p>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="informationDisplay">
+            <div class="quote">
+                <h1 class="slogan all">Have your own library</h1>
+                <h4 class="line all">"Reading is essential for those who seek to rise above the ordinary"</h4>
+                <h4 class="line all">-Jim Rohn-</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./backend/register.js"></script>
+</body>
+</html>

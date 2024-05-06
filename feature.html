@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="./Eyesberg.ico">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./feature.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="margin: 0px; font-family: Poppins, sans-serif;">
+    <div class="navigation" id="navigation">
+        <div class="naviField">
+            <ul class="naviList">
+                <li class="li"><a class="list" href="./index.html">Home</a></li>
+                <li class="li"><a class="list" href="./trending.html">Trending</a></li>
+                <li class="li"><a class="list" href="./genres.html">Genres</a></li>
+                <li class="li"><a class="list" href="./library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="profileField">
+            <div class="featureIcon">
+                <i class="fa fa-search search naviFa" aria-hidden="true"></i>
+                <i class="fa fa-bell naviFa" aria-hidden="true"></i>
+            </div>
+            <div class="profile" id="profile" onmouseover="profileDrop()" onmouseout="profileOut()">
+                <div style="display: flex; align-items: center;">
+                    <img class="avatar" id="avatar" src="./image/guest_avatar.jpg" alt="Photo">
+                    <h5 id="nameField" class="nameField">Sign In</h5>
+                </div>
+                <i class="fa fa-sort-desc naviFaP" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="profileDropdown" onmouseover="profileDrop()" onmouseout="profileOut()" id="profileDropdown" style="display: none;">
+        <ul class="profileList">
+            <li class="profileNavi gotoProfile">Profile</li>
+            <li class="profileNavi gotoWishlist">Wishlist</li>
+            <li class="profileNavi gotoCart">Cart</li>
+            <li style="height: 1px; background-color: rgb(197, 197, 197);"></li>
+            <li class="profileNavi gotoSetting">Setting</li>
+            <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
+        </ul>
+    </div>
+    <img src="./image/58481418751.png" class="featureImg" alt="">
+    <div class="base">
+        <div class="divBase">
+            <h1 class="hdFe">New released</h1>
+            <div class="bodyFe">
+                <button class="arrowBtn" id="previousNR"><i class="fa arrow fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="bodyFeContain">
+                    <div class="bookNR">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookNR">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookNR">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookNR">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookNR">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrowBtn" id="nextNR"><i class="fa arrow fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="divBase">
+            <h1 class="hdFe">People Reading</h1>
+            <div class="bodyFe">
+                <button class="arrowBtn" id="previousHP"><i class="fa arrow fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="bodyFeContain">
+                    <div class="bookHP">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookHP">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookHP">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookHP">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                    <div class="bookHP">
+                        <div class="ove">
+                            <img class="oeImg" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h1 class="detailHd">Omniscient Reader Viewpoint</h1>
+                            <p class="detailAu">By SingNSong</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrowBtn" id="nextHP"><i class="fa arrow fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="divBase">
+            <div style="display: flex; align-items: center; justify-content: space-around;">
+                <div style="height: 1px; width: 325px; background-color: rgb(160, 160, 160);"></div>
+                <h1 class="hdFe FYPHd">For You Page</h1>
+                <div style="height: 1px; width: 325px; background-color: rgb(160, 160, 160);"></div>
+            </div>
+            <p class="slopFYP">"Discover Your World, One Swipe at a Time!"</p>
+            <div class="realContain">
+                <div class="shelf">
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                    <div class="bookS">
+                        <div class="books">
+                            <img class="imgG" src="https://i.pinimg.com/736x/5b/f5/04/5bf504be6bf3832b0c75103c2e445231.jpg" alt="">
+                            <div class="detailS">
+                                <h1 class="headerS">Omniscient Reader Viewpoint</h1>
+                                <p class="authorS">by SingNSong</p>
+                                <div class="otherS">
+                                    <p class="rateS">Rating: 9.8</p>
+                                    <p class="likeS">- Likes: 32,546</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="readS">Read</button>
+                    </div>
+                    <hr>
+                </div>
+                <div class="secondShelf">
+                    <img src="./image/981y384917.png" class="imgSB" alt="">
+                    <div class="sSQuoteZone">
+                        <p class="sSquote">"Good communication is just as stimulating as black coffee, and just as hard to sleep after."</p>
+                        <p class="sSAuthor">- Anne Morrow Lindbergh -</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="upperFooter">
+            <div>
+                <h1 class="logoName">EYES<span style="font-weight: 200;">BERG</span></h1>
+                <p class="slogan">"Embark on a Literary Journey with Our Vast Ebook Library: Where Every Page is a Portal to Infinite Worlds of Imagination and Knowledge!"</p>
+            </div>
+            <div>
+                <h1 class="footerListHeader">TEAMS</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" class="footerListA" href="">About Us</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Guidlines</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Services</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Help center</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Q&A</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Privacy Policy</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Terms of service</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Vision</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Affiliate</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Careers</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Donate</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Discover</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Home</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Books</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Author</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Subjects</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Advance Search</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">My Account</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Sign In</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">View Cart</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">My Wishlist</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Library</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottomFooter">
+            <hr>
+            <div class="bottomFooterContainer">
+                <p>@2024 Eyesberg</p>
+                <div class="social">
+                    <i class="fa faSocial fa-facebook-square" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-twitter" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./backend/feature.js"></script>
+</body>
+</html>

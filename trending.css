@@ -1,0 +1,210 @@
+.base{
+    display: flex;
+}
+
+.baseS{
+    padding: 50px 10% 150px 10%;
+}
+
+.content{
+    width: 225px;
+}
+
+.contetnUl{
+    list-style: none;
+    padding: 20px;
+    margin: 0px;
+}
+
+.ctHd{
+    font-size: 65px;
+    margin: 10px 20px;
+}
+
+.ctLi{
+    padding: 15px;
+    border-radius: 20px 0px 0px 20px;
+    transition: 0.2s;
+}
+
+.ctLi:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.weekly{
+    background-color: white;
+}
+
+.current{
+    background-color: black;
+    color: white;
+}
+
+.ctHr{
+    margin: 0px;
+    border: 1px;
+    width: 200px;
+}
+
+.bookT{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.imageBookT{
+    width: 115px;
+    aspect-ratio: 1/1.5;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.headerT{
+    margin: 0px;
+    width: 615px;
+}
+
+.detailT{
+    margin: 0px;
+    width: 600px;
+    text-align: justify;
+}
+
+.desT{
+    padding: 0px 15px;
+}
+
+.tagsT{
+    margin-top: 8px;
+    display: flex;
+}
+
+.tags{
+    background-color: rgb(219, 219, 219);
+    width: max-content;
+}
+
+.readT{
+    border-radius: 50px;
+    padding: 8px 20px;
+    text-align: center;
+    color: white;
+    background: rgb(82,82,82);
+    background: linear-gradient(138deg, rgba(82,82,82,1) 0%, rgba(17,17,17,1) 100%);
+}
+
+.readT:hover{
+    cursor: pointer;
+}
+
+.otherT{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.priceT{
+    font-size: 30px;
+    color: rgb(44, 96, 44);
+    margin: 5px 0px;
+    font-family: "Merriweather", serif;
+}
+
+.displaying{
+    padding: 10px;
+}
+
+.more{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.morebtn{
+    padding: 12px 35px;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgb(232, 232, 232);
+    font-family: 'Poppins', sans-serif;
+}
+
+.morebtn:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.cdHd{
+    font-size: 65px;
+    margin: 0px;
+    
+}
+
+.rankingNo{
+    margin: 0px 10px;
+}
+
+.norno{
+    color: rgb(90, 90, 90);
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.no1{
+    color: brown;
+    font-weight: 500;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.no2{
+    color: goldenrod;
+    font-size: 30px;
+    font-weight: 450;
+    font-style: italic;
+}
+
+.no3{
+    color: rgb(74, 116, 83);
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.headerT:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.imageBookT:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.tags:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.imggg{
+    overflow: hidden;
+}
+
+.imgG{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.limg{
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+}

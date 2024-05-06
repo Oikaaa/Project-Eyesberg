@@ -1,0 +1,380 @@
+.display{
+    padding: 125px 10%;
+    display: flex;
+}
+
+/*-----*/
+
+.sticky{
+    position: sticky;
+    top: 125px;
+}
+
+.bookCover{
+    width: 230px;
+    aspect-ratio: 1/1.5;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px rgb(147, 147, 147);
+}
+
+.detail{
+    padding: 10px 30px;
+}
+
+.buy{
+    margin-top: 10px;
+    display: flex;
+}
+
+.rent{
+    display: flex;
+    top: 620px;
+    margin-top: 10px;
+    border: 2px solid #3f8362;
+    border-radius: 50px;   
+}
+
+.buyOption{
+    border-radius: 50px 0px 0px 50px;
+    bottom: 0px;
+    padding: 12px;
+    background-color: #3f8362;
+    color: white;
+    transition: 0.2s;
+    width: 241.5px;
+    border: none;
+}
+
+.otherOption{
+    border-radius: 0px 50px 50px 0px;
+    z-index: 70;
+    transition: 0.2s;
+    bottom: 0px;
+    padding: 12px;
+    background-color: #3f8362;
+    color: white;
+    border-style: none;
+    width: 39.5px;
+}
+
+.otherOption:hover{
+    background-color: #539e7a;
+    cursor: pointer;
+}
+
+.buyOption:hover{
+    background-color: #539e7a;
+    cursor: pointer;
+}
+
+.borderBtw{
+    width: 0.5px;
+    background-color: #284e3c;
+}
+
+.rentOption{
+    border-radius: 50px 0px 0px 50px;
+    z-index: 70;
+    bottom: 0px;
+    padding: 10px;
+    transition: 0.2s;
+    background-color: white;
+    color: black;
+    border-style: none;
+    width: 240px;
+    
+}
+
+.durationOption{
+    border-radius: 0px 50px 50px 0px;
+    z-index: 70;
+    transition: 0.2s;
+    bottom: 0px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-style: none;
+    width: 39.5px;
+}
+
+.durationOption:hover{
+    background-color: rgb(244, 244, 244);
+    cursor: pointer;
+}
+
+.rentOption:hover{
+    cursor: pointer;
+    background-color: rgb(244, 244, 244);
+}
+
+.rentBorder{
+    background-color: #3f8362;
+}
+
+/*-----*/
+.starO{
+    font-size: 25px;
+    padding: 0px 5px;
+    color: gray;
+}
+
+.starO:hover{
+    cursor: pointer;
+}
+
+.author{
+    font-size: 25px;
+    margin: 0px;
+    font-weight: 300;
+}
+
+.header{
+    margin: 0px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.star{
+    color: goldenrod;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.rating{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.tags{
+    display: flex;
+    align-items: center;
+}
+
+.tag{
+    padding: 5px;
+    margin: 0px 10px;
+    border-bottom: #3f8362 solid 2px;
+}
+
+#tagGenre{
+    display: flex;
+}
+
+.tag:hover{
+    cursor: pointer;
+}
+
+.format{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.con{
+    margin: 5px 0px;
+    font-size: 15px;
+    width: 600px;
+}
+
+.cons{
+    margin: 5px 0px;
+
+    color: gray;
+    font-size: 15px;
+}
+
+.edition{
+    margin: 20px 0px;
+}
+
+.ediHd{
+    margin: 10px 0px 20px 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stat{
+    margin: 20px 0px;
+    color: gray;
+    font-size: 15px;
+}
+
+.price{
+    font-size: 50px;
+    z-index: -1;
+}
+
+.authorImg{
+    border-radius: 50%;
+    height: 80px;
+}
+
+.authorDetail{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.auName{
+    margin: 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.auFollower{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.authorInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.follow{
+    padding: 10px;
+    border-radius: 50px;
+    width: 100px;
+    background-color: black;
+    border-style: none;
+    color: white;
+    font-weight: 600;
+}
+
+.follow:hover{
+    cursor: pointer;
+}
+
+.sugHd{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nextbtn{
+    padding: 10px;
+    font-size: 40px;
+}
+
+.nextbtn:hover{
+    cursor: pointer;
+}
+
+.suggImg{
+    height: 300px;
+    width: 210px;
+    border-radius: 0px 15px 15px 0px;
+    transition: 0.5s;
+}
+
+.suggName{
+    margin: 0px;
+    font-size: 20px;
+}
+
+.suggAuth{
+    margin: 0px;
+}
+
+.suggBook{
+    width: 210px;
+}
+
+.det{
+    margin: 0px;
+}
+
+.suggRate{
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    align-items: center;
+    font-weight: 500;
+}
+
+.suggStar{
+    color: goldenrod;
+}
+
+.suggLike{
+    margin-left: 10px;
+    color: gray;
+}
+
+.suggBook:hover{
+        cursor: pointer;
+    .suggName{
+        text-decoration: underline;
+    }
+}
+
+.shelf{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*--------*/
+.arrowBtn{
+    padding: 15px;
+    border: none;
+    background-color: white;
+    transition: 1s;
+    box-shadow: 0px 0px 10px rgb(218, 218, 218);
+}
+
+.arrowBtn:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.arrow{
+    font-size: 16px;
+}
+
+.bodyFeContain{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bodyFe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buyOther{
+    position: absolute;
+    z-index: 99;
+    bottom: 115px;
+    right: -280px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+
+.buyLi{
+    width: 200px;
+    justify-content: center;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wl{
+    border-radius: 10px 10px 0px 0px;
+}
+
+.sv{
+    border-radius: 0px 0px 10px 10px;
+}
+
+.buyLi:hover{
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);
+}
+
+.previous{
+    color: gray;
+}

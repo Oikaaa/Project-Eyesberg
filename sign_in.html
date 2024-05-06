@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="./Eyesberg.ico">
+    <script type="module" src="./firebase.js"></script>
+    <link rel="stylesheet" href="./sign_in.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0px; font-family: Roboto Condensed, sans-serif; font-optical-sizing: auto; font-style: normal;" >
+    <div class="display">
+        <button class="signUpBtn" onclick="location.href = './register.html';">Sign Up</button>
+        <div class="informationDisplay">
+            <div class="quote">
+                <h1 class="slogan all">Getting Started</h1>
+                <h4 class="line all">"One step away from to have your own space, please enjoy your stay"</h4>
+                <h4 class="line all">-Peace-</h4>
+            </div>
+        </div>
+        <div class="registerHolder">
+            <div class="register">
+                <h1 class="signInHeader">Sign In</h1>
+                <form class="registerForm" id="registerForm">
+                    <h5 class="formHeader">Email</h5>
+                    <input class="input" type="email" id="userEmail" placeholder="">
+                    <h5 class="formHeader">Password</h5>
+                    <input class="input" type="password" id="userPassword" placeholder="">
+                    <p id="passwordAlert" style="margin: 0px; color: red; font-size: 13px; display: none; font-style: italic;">*Password or email incorrect</p>
+                    <a onclick="resetPassword()" class="reset"><span style="color: black; text-decoration: none;">Forgot your password?</span> Click here</a>
+                    <button class="submitButton" id="submitButton">Submit</button>
+                </form>
+                <h4>OR</h4>
+                <div class="googleAuth" id="googleAuth">
+                    <img class="googleImg" src="./image/google.svg.webp" alt="">
+                    <p class="googleLine">Continue with google</p>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./backend/sign_in.js"></script>
+</body>
+</html>

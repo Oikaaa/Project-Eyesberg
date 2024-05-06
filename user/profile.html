@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyesberg</title>
+    <link rel="icon" type="image/ico" href="../Eyesberg.ico">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="margin: 0px; font-family: Poppins, sans-serif;">
+    <div class="navigation" id="navigation">
+        <div class="naviField">
+            <ul class="naviList">
+                <li class="li"><a class="list" href="../index.html">Home</a></li>
+                <li class="li"><a class="list" href="../trending.html">Trending</a></li>
+                <li class="li"><a class="list" href="../genres.html">Genres</a></li>
+                <li class="li"><a class="list" href="../library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="profileField">
+            <div class="featureIcon">
+                <i class="fa fa-search search naviFa" aria-hidden="true"></i>
+                <i class="fa fa-bell naviFa" aria-hidden="true"></i>
+            </div>
+            <div class="profile" id="profile" onmouseover="profileDrop()" onmouseout="profileOut()">
+                <div style="display: flex; align-items: center;">
+                    <img class="avatar" id="avatar" src="../image/guest_avatar.jpg" alt="">
+                    <h5 id="nameField" class="nameField">Sign In</h5>
+                </div>
+                <i class="fa fa-sort-desc naviFaP" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="profileDropdown" onmouseover="profileDrop()" onmouseout="profileOut()" id="profileDropdown" style="display: none;">
+        <ul class="profileList">
+            <li class="profileNavi gotoProfile">Profile</li>
+            <li class="profileNavi gotoWishlist">Wishlist</li>
+            <li class="profileNavi gotoCart">Cart</li>
+            <li style="height: 1px; background-color: rgb(197, 197, 197);"></li>
+            <li class="profileNavi gotoSetting">Setting</li>
+            <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="primary">
+            <div class="userProfile">
+                <div class="avatarUserProfile">
+                    <img src="../image/guest_avatar.jpg" id="userAvatar" class="userAvatar" alt="">
+                    <div style="display: flex; flex-direction: column; align-items: baseline; margin-top: 10px; justify-content: end;">
+                        <a class="other" href="">(0) friends</a>
+                        <a class="other" href="">(0) rating</a>
+                        <a class="other" href="">(0) review</a>
+                    </div>
+                </div>
+                <div class="detailUserProfile">
+                    <div class="upperProfileDetail" id="upperProfileDetail">
+                        <h1 class="upperDN">Loading... <a class="editProfileText" href="./edit.html">[edit profile]</a> </h1>
+                    </div>
+                    <hr>
+                    <div class="lowerProfileDetail">
+                        <div class="textDetail">
+                            <h3 class="smallText">Born</h3>
+                            <h3 class="smallText data" id="bornDate">N/A</h3>
+                        </div>
+                        <div class="textDetail">
+                            <h3 class="smallText">Joined</h3>
+                            <h3 class="smallText data" id="joinDate">N/A</h3>
+                        </div>
+                        <div class="textDetail">
+                            <h3 class="smallText">Gender</h3>
+                            <h3 class="smallText data" id="userGen">N/A</h3>
+                        </div>
+                        <div class="textDetail">
+                            <h3 class="smallText">Verified</h3>
+                            <h3 class="smallText data" id="userVerified">Unverified</h3>
+                        </div>
+                        <div id="emV" class="textDetail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="userLibrary">
+                <h1 class="libraryHeader" id="libraryHeader">User's library</h1>
+                <hr style="margin:0px; border-style: solid; border-top: 1px; border-color: #9a9a9a;">
+                <div style="display: flex; flex-wrap: wrap;">
+                    <ul class="libraryUl">
+                        <li class="libraryContent current">Read</li>
+                        <li class="libraryContent">Reading</li>
+                        <li class="libraryContent">Saved</li>
+                        <li class="libraryContent">Wishlist</li>
+                    </ul>
+                </div>
+                <div class="libraryDisplay">
+                    <h1 style="font-size: 20px; font-weight: 300;">This dude doesn't like book:(</h1>
+                </div>
+            </div>
+            <div class="userDes">
+                <h1 class="desHeader" id="desHeader">User's Description</h1>
+                <hr style="margin:0px; border-style: solid; border-top: 1px; border-color: #9a9a9a;">
+                <div class="desContainer" id="desContainer">
+                    <a class="smallertext" href="./edit.html">Write a description now</a>
+                </div>
+            </div>
+        </div>
+        <div class="secondary">
+            <div class="badge">
+                <img src="../image/Achivement.png" class="achievementImg" alt="Image">
+                <h1 class="badgeHeader">Badges</h1>
+                <hr>
+                
+                <div class="badgeContainer">
+                    <div class="achivement">
+                        <div class="otherOfOther">
+                            <div class="communityBadge"></div>
+                            <div>
+                                <h2 class="communityBadgeTitle">Member</h2>
+                                <h3 class="communityBadgeDes">Join the community</h3>
+                            </div>
+                        </div>
+                        <h3 class="badgeCondition complete">(complete)</h3>
+                    </div>
+                    <div class="achivement">
+                        <div class="otherOfOther">
+                            <div class="communityBadge GW"></div>
+                            <div>
+                                <h2 class="communityBadgeTitle">Good Will</h2>
+                                <h3 class="communityBadgeDes">Buy a first book</h3>
+                            </div>
+                        </div>
+                        <h3 class="badgeCondition incomplete">(incomplete)</h3>
+                    </div>
+                    <div class="achivement">
+                        <div class="otherOfOther">
+                            <div class="communityBadge RM"></div>
+                            <div>
+                                <h2 class="communityBadgeTitle">Reading Machine</h2>
+                                <h3 class="communityBadgeDes">Read 100 books</h3>
+                            </div>
+                        </div>
+                        <h3 class="badgeCondition incomplete">(incomplete)</h3>
+                    </div>
+                    <div class="achivement">
+                        <div class="otherOfOther">
+                            <div class="communityBadge Author"></div>
+                            <div>
+                                <h2 class="communityBadgeTitle">Author</h2>
+                                <h3 class="communityBadgeDes">Publish your first book!</h3>
+                            </div>
+                        </div>
+                        <h3 class="badgeCondition incomplete">(incomplete)</h3>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="friends">
+                <h1 class="badgeHeader">Friends list (0)</h1>
+                <hr class="hrTag">
+                <div class="friendsList">
+                    <div class="friendAdd">
+                        <div class="otherOfOther">
+                            <div class="friendAddBtn">+</div>
+                            <h2 class="friendName">Add a friend</h2>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="upperFooter">
+            <div>
+                <h1 class="logoName">EYES<span style="font-weight: 200;">BERG</span></h1>
+                <p class="slogan">"Embark on a Literary Journey with Our Vast Ebook Library: Where Every Page is a Portal to Infinite Worlds of Imagination and Knowledge!"</p>
+            </div>
+            <div>
+                <h1 class="footerListHeader">TEAMS</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" class="footerListA" href="">About Us</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Guidlines</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Services</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Help center</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Q&A</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Privacy Policy</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Terms of service</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Vision</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Affiliate</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Careers</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Donate</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">Discover</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Home</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Books</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Author</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Subjects</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Advance Search</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footerListHeader">My Account</h1>
+                <ul class="footerUl">
+                    <li class="footerlist"><a class="footerListA" href="">Sign In</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">View Cart</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">My Wishlist</a></li>
+                    <li class="footerlist"><a class="footerListA" href="">Library</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottomFooter">
+            <hr>
+            <div class="bottomFooterContainer">
+                <p>@2024 Eyesberg</p>
+                <div class="social">
+                    <i class="fa faSocial fa-facebook-square" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-twitter" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fa faSocial fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="../backend/profile.js"></script>
+</body>
+</html>

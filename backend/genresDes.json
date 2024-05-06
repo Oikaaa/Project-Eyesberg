@@ -1,0 +1,106 @@
+[
+    {
+        "type": "fiction",
+        "des": "Imaginative tales that transport readers into worlds of creativity and possibility."
+    },
+    {
+        "type": "n-fiction",
+        "des": "Factual narratives that explore real-life events, people, and ideas, offering readers knowledge and insights into the world around them."
+    },
+    {
+        "type": "romance",
+        "des": "Stories of love, passion, and connection, where characters navigate relationships, emotions, and obstacles on the journey to finding true intimacy and happiness."
+    },
+    {
+        "type": "comedy",
+        "des": "Humorous tales that entertain and provoke laughter through wit, satire, and absurdity, often exploring the quirks and follies of human nature with a light-hearted touch."
+    },
+    {
+        "type": "thriller",
+        "des": "Gripping narratives filled with tension, suspense, and excitement, where protagonists face danger, intrigue, and high-stakes challenges that keep readers on the edge of their seats until the final, thrilling conclusion."
+    },
+    {
+        "type": "contemporary",
+        "des": "Stories set in modern times that reflect current societal issues, cultural dynamics, and personal experiences, offering readers a glimpse into the complexities of contemporary life with authenticity and relevance."
+    },
+    {
+        "type": "psychological",
+        "des": "Intriguing narratives that delve into the depths of the human mind, exploring complex emotions, motivations, and behaviors, often through intricate character studies and suspenseful plot twists that leave readers questioning perception and reality."
+    },
+    {
+        "type": "fantasy",
+        "des": "Enchanting realms where magic, mythical creatures, and epic quests transport readers to imaginative worlds brimming with adventure, heroism, and wonder, inviting them to escape reality and embark on extraordinary journeys beyond the bounds of possibility."
+    },
+    {
+        "type": "epic",
+        "des": "Grand narratives that span vast landscapes and epochs, chronicling the heroic deeds of larger-than-life characters embroiled in battles of epic proportions, weaving together themes of courage, destiny, and sacrifice to create timeless sagas that resonate across generations."
+    },
+    {
+        "type": "paranormal",
+        "des": "Mysterious tales that blur the line between the natural and the supernatural, exploring phenomena beyond conventional understanding such as ghosts, vampires, and psychic abilities, inviting readers into realms where the eerie and the extraordinary collide in chilling and captivating ways."
+    },
+    {
+        "type": "crime",
+        "des": "Gripping narratives that delve into the dark underbelly of society, where detectives, criminals, and victims navigate intricate webs of deception, betrayal, and suspense, unraveling mysteries and uncovering the truth behind heinous acts of violence and wrongdoing."
+    },
+    {
+        "type": "horror",
+        "des": "Terrifying narratives that evoke fear and suspense, immersing readers in worlds of darkness, supernatural forces, and psychological terror, where protagonists confront their deepest fears and grapple with the unknown, offering an adrenaline-fueled journey into the macabre and the monstrous."
+    },
+    {
+        "type": "mystery",
+        "des": "Intriguing narratives that challenge readers to unravel enigmatic puzzles and solve perplexing crimes alongside clever detectives, uncovering clues, suspects, and hidden truths in a suspenseful journey towards the thrilling revelation of whodunit."
+    },
+    {
+        "type": "classics",
+        "des": "Timeless tales that have stood the test of time, offering readers profound insights into human nature, society, and the human condition through richly textured prose, memorable characters, and enduring themes that continue to resonate across generations."
+    },
+    {
+        "type": "supernatural",
+        "des": "Enthralling narratives that explore the realm of the paranormal, featuring encounters with ghosts, demons, witches, and otherworldly beings, blurring the lines between reality and the unknown in spine-tingling tales of mystery, suspense, and the unexplained."
+    },
+    {
+        "type": "gothic",
+        "des": "Atmospheric narratives characterized by eerie settings, sinister secrets, and macabre themes, evoking feelings of dread and unease as protagonists confront haunted mansions, ancient curses, and forbidden desires in haunting tales that blend elements of romance, horror, and mystery."
+    },
+    {
+        "type": "adventure",
+        "des": "Exciting narratives that sweep readers into daring escapades and perilous journeys across exotic landscapes, where heroes and heroines confront danger, discover hidden treasures, and test their courage against formidable foes in epic quests for glory and adventure."
+    },
+    {
+        "type": "action",
+        "des": "Fast-paced narratives filled with adrenaline-pumping thrills, explosive conflicts, and heart-stopping stunts, where protagonists battle against insurmountable odds, engaging readers in high-octane adventures that keep them on the edge of their seats until the very end."
+    },
+    {
+        "type": "business",
+        "des": "Insightful narratives that delve into the dynamics of commerce, entrepreneurship, and innovation, offering readers valuable lessons, strategies, and perspectives on navigating the complexities of the corporate world and achieving success in the marketplace."
+    },
+    {
+        "type": "life",
+        "des": "Reflective narratives that explore the universal experiences, emotions, and challenges of human existence, capturing the essence of life's journey with honesty, authenticity, and wisdom, inviting readers to ponder the profound mysteries of being alive."
+    },
+    {
+        "type": "computer",
+        "des": "Informative narratives that delve into the realms of technology, programming, and digital culture, offering readers insights, tutorials, and commentary on the latest trends, innovations, and developments in the world of computers and computing."
+    },
+    {
+        "type": "art",
+        "des": "Inspirational narratives that celebrate creativity, expression, and artistic vision, showcasing the diverse forms of artistic endeavor, from painting and sculpture to music, literature, and performance, inspiring readers to embrace their own creativity and appreciation for the arts."
+    },
+    {
+        "type": "culture",
+        "des": "Enriching narratives that explore the richness and diversity of human cultures around the world, highlighting traditions, customs, beliefs, and values that shape societies and communities, fostering understanding, empathy, and appreciation for cultural diversity."
+    },
+    {
+        "type": "religious",
+        "des": "Profound narratives that delve into the realms of spirituality, faith, and religious belief, offering readers insights, inspiration, and guidance on matters of the soul, morality, and the search for meaning in life, drawing from the wisdom and teachings of religious traditions throughout history."
+    },
+    {
+        "type": "k-novel",
+        "des": "Dynamic South Korean narratives, presented visually or in prose, spanning diverse genres and offering engaging storytelling experiences for readers."
+    },
+    {
+        "type": "j-novel",
+        "des": "Engaging Japanese stories blending concise storytelling, vivid characters, and themes ranging from fantasy to romance, often aimed at young adult readers."
+    }
+]

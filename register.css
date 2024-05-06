@@ -1,0 +1,173 @@
+.display{
+    display: flex;
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0px;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.register{
+    padding: 80px 100px 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+}
+
+.namePart{
+    width: 49%;
+}
+
+.informationDisplay{
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(153deg, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 100%);
+    box-shadow: 5px 10px 8px 10px #888888
+}
+
+.inputName{
+    height: 30px;
+    width: 100%;
+    border-style: none;
+    font-size: 17px;
+    border-bottom: 1px solid black;
+}
+
+.signInHeader{
+    font-size: 50px;
+    width: 100%;
+
+}
+
+.formHeader{
+    margin: 0px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.input{
+    height: 30px;
+    width: 350px;
+    border-radius: 0px;
+    border-style: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.inputName:focus{
+    outline: none;
+}
+
+.submitButton{
+    height: 50px;
+    margin-top: 30px;
+    font-size: 16px;
+    border-style: none;
+    border-radius: 50px;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+}
+
+.submitButton:hover{
+    cursor: pointer;
+    color: black;
+    background-color: silver;
+
+}
+
+.logo{
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.quote{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan{
+    font-size: 60px;
+}
+
+.line{
+    margin: 5px;
+    font-size: 20px;
+}
+
+.sloganLine{
+    width: 50%;
+}
+
+.googleAuth{
+    height: 50px;
+    width: 75%;
+    display: flex;
+    border: 1px solid silver;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.googleAuth:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.googleLine{
+    margin: 0px;
+}
+
+.googleImg{
+    height: 75%;
+}
+
+.registerLine{
+    height: 75%;
+    margin: 25px 0px;
+}
+
+.signUpBtn{
+    border-radius: 50px;
+    border-style: none;
+    padding: 10px 25px 10px 25px;
+    background-color: #cbcbcb;
+    color: black;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 620;
+}
+
+.signUpBtn:hover{
+    cursor: pointer;
+    background-color: #9d9d9d;
+    color: black;
+}
