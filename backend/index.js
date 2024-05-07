@@ -192,7 +192,7 @@ async function genreAPI() {
     const weeklyBooks = data.filter((book) =>
       book.type.split(", ").includes("weekly")
     );
-    weeklyBooks.forEach((book) => {
+    weeklyBooks.slice(0, 3).forEach((book) => {
       const topPick = document.getElementById("topPick");
       const topNovel = document.createElement("div");
       topNovel.classList.add("topNovel");

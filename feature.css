@@ -40,7 +40,7 @@
 
 .oeImg{
     width: 195px;
-    height: 250px;
+    aspect-ratio: 1/1.5;
     object-fit: cover;
     transition: 0.5s;
 }
@@ -60,6 +60,10 @@
     overflow: hidden;
     max-width: 195px;
     text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .detailHd:hover{
@@ -144,13 +148,14 @@
     object-fit: cover;
 }
 
-.imgG:hover{
-    cursor: pointer;
-}
-
 .headerS{
     margin: 0px;
     font-size: 20px;
+    width: 500px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .authorS{
@@ -193,10 +198,10 @@
 }
 
 /*-----*/
-
 .realContain{
     display: flex;
     justify-content: space-between;
+    margin-top: 25px;
 }
 
 hr{
@@ -231,4 +236,12 @@ hr{
 
 .sSAuthor{
     margin: 0px;
+}
+
+#previousHP{
+    opacity: 0;
+}
+
+#previousNR{
+    opacity: 0;
 }
