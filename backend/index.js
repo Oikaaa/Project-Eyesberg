@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const database = firebase.database();
-const db = database
+const db = database;
 const user = firebase.auth().currentUser;
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -69,6 +69,31 @@ async function genreAPI() {
     const response = await fetch("http://localhost:8080/api/books");
     const data = await response.json();
 
+    const cc = data.filter((b) => b.type.split(", ").includes("weekly"));
+    document.getElementById("communityContainer").innerHTML = "";
+    cc.slice(0, 4).forEach(function (item) {
+      const div = document.createElement("div");
+      div.classList.add("bookCB");
+      div.classList.add("book");
+      div.innerHTML = `
+      <div class="overflowCB">
+        <img class="communityBookImg" src="${item.imageURL}" alt="">
+      </div>
+      <h2 class="communityBookHeader">${item.name}</h2>
+      <p class="communityBookAuthor">${item.author}</p>
+      <p class="communityPrice">$${item.price}</p>`;
+      div.addEventListener("click", function () {
+        auth.onAuthStateChanged((user) => {
+          db.ref("users/" + user.uid)
+            .update({ bookId: item.id })
+            .then(() => {
+              window.location.href = "./book.html";
+            });
+        });
+      });
+      document.getElementById("communityContainer").appendChild(div);
+    });
+
     const genresListsContext = document.querySelectorAll(".genresListsContext"); //Select class
     genresListsContext.forEach((item) => {
       //add event to all
@@ -94,21 +119,22 @@ async function genreAPI() {
           genreBook.classList.add("genresBook");
           genreBook.classList.add("book");
           //---------------
-          auth.onAuthStateChanged((user)=>{
-            genreBook.addEventListener('click', function(){
+          auth.onAuthStateChanged((user) => {
+            genreBook.addEventListener("click", function () {
               const bookID = {
                 bookId: ebook.id,
-              }
-              db.ref('users/' + user.uid).update(bookID)
-              .then(()=>{
-                window.location.href = './book.html'
-              })
-              .catch((e)=>{
-                console.log(e)
-              })
-            })
-          })
-          
+              };
+              db.ref("users/" + user.uid)
+                .update(bookID)
+                .then(() => {
+                  window.location.href = "./book.html";
+                })
+                .catch((e) => {
+                  console.log(e);
+                });
+            });
+          });
+
           const genres = ebook.type
             .split(", ")
             .map(
@@ -147,20 +173,21 @@ async function genreAPI() {
       const genreShelf = document.getElementById("genresBookshelf");
       const genreBook = document.createElement("div");
       genreBook.classList.add("genresBook");
-      auth.onAuthStateChanged((user)=>{
-        genreBook.addEventListener('click', function(){
+      auth.onAuthStateChanged((user) => {
+        genreBook.addEventListener("click", function () {
           const bookID = {
             bookId: ebook.id,
-          }
-          db.ref('users/' + user.uid).update(bookID)
-          .then(()=>{
-            window.location.href = './book.html'
-          })
-          .catch((e)=>{
-            console.log(e)
-          })
-        })
-      })
+          };
+          db.ref("users/" + user.uid)
+            .update(bookID)
+            .then(() => {
+              window.location.href = "./book.html";
+            })
+            .catch((e) => {
+              console.log(e);
+            });
+        });
+      });
       genreBook.classList.add("book");
       const genres = ebook.type
         .split(", ")
@@ -201,82 +228,81 @@ async function genreAPI() {
       <h3 class="topTitle top1">${book.name}</h3>`;
       topPick.appendChild(topNovel);
       //-----------------
-      auth.onAuthStateChanged((user)=>{
-        topNovel.addEventListener('click', function(){
+      auth.onAuthStateChanged((user) => {
+        topNovel.addEventListener("click", function () {
           const bookID = {
             bookId: book.id,
-          }
-          db.ref('users/' + user.uid).update(bookID)
-          .then(()=>{
-            window.location.href = './book.html'
-          })
-          .catch((e)=>{
-            console.log(e)
-          })
-        })
-      })
+          };
+          db.ref("users/" + user.uid)
+            .update(bookID)
+            .then(() => {
+              window.location.href = "./book.html";
+            })
+            .catch((e) => {
+              console.log(e);
+            });
+        });
+      });
     });
 
-
     //------------------Feature------------------------
-    var randomFeat = Math.floor(Math.random()*data.length)
-    var feArray = []
+    var randomFeat = Math.floor(Math.random() * data.length);
+    var feArray = [];
 
-    console.log(data.length)
-    console.log(randomFeat)
-
-    for(var a=0; a>=0 ; a++){
-      if(randomFeat < data.length - 14){
-      break
-      }else{
-        randomFeat = Math.floor(Math.random()*data.length)
-        console.log(randomFeat)
+    for (var a = 0; a >= 0; a++) {
+      if (randomFeat < data.length - 14) {
+        break;
+      } else {
+        randomFeat = Math.floor(Math.random() * data.length);
       }
     }
 
-    for(var i=randomFeat; i<randomFeat+14; i++){
-      feArray.push(data[i])
+    for (var i = randomFeat; i < randomFeat + 14; i++) {
+      feArray.push(data[i]);
     }
-    feArray.forEach(function(item){
-      if(item !== undefined){
-        const feaDiv = document.createElement('div')
-        feaDiv.classList.add('bookDiv')
-        feaDiv.classList.add('book')
-        feaDiv.innerHTML =`
+    feArray.forEach(function (item) {
+      if (item !== undefined) {
+        const feaDiv = document.createElement("div");
+        feaDiv.classList.add("bookDiv");
+        feaDiv.classList.add("book");
+        feaDiv.innerHTML = `
         <div class="overflow">
         <img class="featureBookImg" src="${item.imageURL}" alt="">
         </div>
         <h2 class="featureBookHeader">${item.name}</h2>
         <p class="featureBookAuthor">${item.author}</p>
         <p class="featurePrice">$${item.price}</p>
-        `
-        document.getElementById('featureContainer').appendChild(feaDiv)
-        auth.onAuthStateChanged((user)=>{
-          feaDiv.addEventListener('click',()=>{
-            db.ref('users/' + user.uid).update({bookId: item.id})
-            .then(()=>{
-              window.location.href = './book.html'
-            })
-            .catch((e)=>{
-              console.log(e)
-            })
-          })
-        })
+        `;
+        document.getElementById("featureContainer").appendChild(feaDiv);
+        auth.onAuthStateChanged((user) => {
+          feaDiv.addEventListener("click", () => {
+            db.ref("users/" + user.uid)
+              .update({ bookId: item.id })
+              .then(() => {
+                window.location.href = "./book.html";
+              })
+              .catch((e) => {
+                console.log(e);
+              });
+          });
+        });
       }
-    })
+    });
     //------------------Best Seller------------------------
 
     const bs = data.filter((book) => {
-      return book.type.split(', ').includes('top seller')
-    })
-    bs.forEach((item)=>{
-      async function bookDet(){
-        const det = await fetch('backend/book.json')
-        const resDet = await det.json()
-        const val = resDet.find((book)=>{return book.id === item.id})
+      return book.type.split(", ").includes("top seller");
+    });
+    bs.forEach((item) => {
+      async function bookDet() {
+        const det = await fetch("backend/book.json");
+        const resDet = await det.json();
+        const val = resDet.find((book) => {
+          return book.id === item.id;
+        });
 
-        const bsDiv = document.createElement('div')
-        bsDiv.classList.add('bestContainer')
+        const bsDiv = document.createElement("div");
+        bsDiv.classList.add("bestContainer");
         bsDiv.innerHTML = `
         <div class="bestDiv">
           <div class="overflowBS">
@@ -293,24 +319,23 @@ async function genreAPI() {
             <p class="bestPrice">$24.00</p>
           </div>
         </div>
-        `
-        document.getElementById('bestSellingBook').appendChild(bsDiv)
-        bsDiv.addEventListener('click',()=>{
-          auth.onAuthStateChanged((user)=>{
-            db.ref('users/' + user.uid).update({bookId: item.id})
-            .then(()=>{
-              window.location.href = './book.html'
-            })
-            .catch((e)=>{
-              console.log(e)
-            })
-          })
-        })
+        `;
+        document.getElementById("bestSellingBook").appendChild(bsDiv);
+        bsDiv.addEventListener("click", () => {
+          auth.onAuthStateChanged((user) => {
+            db.ref("users/" + user.uid)
+              .update({ bookId: item.id })
+              .then(() => {
+                window.location.href = "./book.html";
+              })
+              .catch((e) => {
+                console.log(e);
+              });
+          });
+        });
       }
-      bookDet()
-    })
-
-
+      bookDet();
+    });
   } catch (error) {
     console.log(error);
   }
@@ -352,4 +377,8 @@ document.querySelector(".gotoWishlist").addEventListener("click", () => {
 
 document.querySelector(".gotoCart").addEventListener("click", () => {
   window.location.href = "./user/cart.html";
+});
+
+document.querySelector(".dcm").addEventListener("click", () => {
+  window.location.href = "./feature.html";
 });
