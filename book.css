@@ -378,3 +378,66 @@
 .previous{
     color: gray;
 }
+
+.addedAnn{
+    position: fixed;
+    right: -350px;
+    top: 100px;
+    background-color: white;
+    width: 300px;
+    padding: 5px 20px;
+    border-bottom: 4px solid rgb(24, 163, 24);
+    box-shadow: 0px 0px 30px rgb(192, 192, 192);
+}
+
+.addedAnn:hover{
+    cursor: pointer;
+    scale: 1.01;
+}
+
+.addedAnHd{
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.check{
+    color: rgb(24, 163, 24);
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.rentOther{
+    position: absolute;
+    z-index: 99;
+    bottom: 65px;
+    right: -340px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+
+.rentLi{
+    width: 260px;
+    justify-content: center;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rentLi:hover{
+    cursor: pointer;
+    background-color: rgb(234, 234, 234); 
+}
+
+.we:hover{
+    border-radius: 0px;
+}
+
+.fts{
+    color: gray;
+    font-size: 15px;
+    font-style: italic;
+}

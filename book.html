@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./book.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script> 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -55,7 +56,7 @@
               </div>
               <div>
                   <div class="buy">
-                      <button class="buyOption">Buy Now</button>
+                      <button class="buyOption" id="buy">Buy Now</button>
                       <div class="borderBtw"></div>
                       <button id="moreOption" class="otherOption"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
                   </div>
@@ -68,7 +69,14 @@
                   <div class="rent">
                       <button class="rentOption">Rent</button>
                       <div class="borderBtw rentBorder"></div>
-                      <button class="durationOption"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                      <button class="durationOption" id="durationOption"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                  </div>
+                  <div style="display: none;" id="rentOther" class="rentOther">
+                    <ul style="list-style: none; padding: 0px; margin: 0px; z-index: 99;">
+                        <li id="da" class="rentLi wl selected">3 Days <span class="fts"><span style="text-decoration: line-through;">$N/A</span> $N/A</span><i class="fa fa-check" aria-hidden="true"></i></li>
+                        <li id="we" class="rentLi we">7 Days <span class="fts"><span style="text-decoration: line-through;">$N/A</span> $N/A</span></li>
+                        <li id="mo" class="rentLi sv">30 Days <span class="fts"><span style="text-decoration: line-through;">$N/A</span> $N/A</span></li>
+                    </ul>
                   </div>
                   <div id="starRating" style="display: flex; justify-content: center; margin-top: 10px;">
                       <i class="fa starO fa-star-o " id="star1" onmouseover="star1()" onmouseout="starReset()"  aria-hidden="true"></i>
@@ -174,6 +182,9 @@
                   </div>
               </div>
           </div>
+    </div>
+    <div class="addedAnn" id="addedAnn">
+        <h1 class="addedAnHd"><i class="fa check fa-check-circle" aria-hidden="true"></i>Added to cart</h1>
     </div>
 
     <div class="footer">

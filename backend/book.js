@@ -44,6 +44,82 @@ if (user) {
 
         const genres = book.type.split(', ')
         const tagGenre = document.getElementById('tagGenre')
+        //RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT 
+        document.getElementById('da').innerHTML = `3 Days <span class="fts"><span style="text-decoration: line-through;">$${(book.price/30).toFixed(2)}</span> $${(book.price/30 * 0.96).toFixed(2)}/3 days</span> <i class="fa fa-check" aria-hidden="true"></i>`
+        document.getElementById('we').innerHTML = `7 Days <span class="fts"><span style="text-decoration: line-through;">$${(book.price/4).toFixed(2)}</span> $${(book.price/4 * 0.94).toFixed(2)}/7 days</span>`
+        document.getElementById('mo').innerHTML = `30 Days <span class="fts"><span style="text-decoration: line-through;">$${book.price}</span> $${(book.price * 0.92).toFixed(2)}/30 days</span>`
+        document.querySelectorAll('.rentLi').forEach(function(item){
+          item.addEventListener('click', function(){
+            document.querySelectorAll('.rentLi').forEach(function(ite){
+              const removeCheck = ite.innerHTML.replace('<i class="fa fa-check" aria-hidden="true"></i>', "")
+              ite.innerHTML = removeCheck
+              ite.classList.remove('selected')
+            })
+            this.innerHTML = `${item.innerHTML} <i class="fa fa-check" aria-hidden="true"></i>`
+            this.classList.add('selected')
+          })
+        })
+        document.getElementById('durationOption').addEventListener('click', function(){
+          if(document.getElementById('rentOther').style.display === 'block'){
+            document.getElementById('rentOther').style.display = 'none'
+          }else{
+            document.getElementById('rentOther').style.display = 'block'
+          }
+        })
+
+        //CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART
+
+        db.ref('users/' + uid + '/detail/cart').get()
+          .then((snapshot)=>{
+            const val = snapshot.val()
+            const ssv = val.find((b)=>b === book.id)
+              if(ssv !== undefined){
+                //removed from cart
+                document.getElementById('buy').innerText = 'Added'
+              }else{
+                //add to list
+                document.getElementById('buy').innerText = 'Buy Now'
+              }
+          })
+
+          //BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY 
+
+        document.getElementById('buy').addEventListener('click', function(){
+          db.ref('users/' + uid + '/detail/cart').get()
+          .then((snapshot)=>{
+            const val = snapshot.val()
+            const ssv = val.find((b)=>b === book.id)
+              if(ssv !== undefined){
+                //remove from list
+                const index = val.indexOf(book.id)
+                val.splice(index, 1)
+                db.ref('users/' + user.uid + '/detail/cart').set(val)
+                .then(()=>{
+                  document.getElementById('buy').innerText = 'Buy Now'
+                  document.getElementById('addedAnn').innerHTML = ``
+                  document.getElementById('addedAnn').innerHTML = `<h1 class="addedAnHd"><i class="fa check fa-check-circle" aria-hidden="true"></i>Removed to cart</h1>`
+                  gsap.to(document.getElementById('addedAnn'), {x: -350})
+                  setTimeout(function(){
+                    gsap.to(document.getElementById('addedAnn'), {x: 350})
+                    }, 5000)
+                })
+              }else{
+                //add to list
+                db.ref('users/' + user.uid + '/detail/cart').child(val.length).set(book.id)
+                .then(()=>{
+                  document.getElementById('addedAnn').innerHTML = ``
+                  document.getElementById('addedAnn').innerHTML = `<h1 class="addedAnHd"><i class="fa check fa-check-circle" aria-hidden="true"></i>Added to cart</h1>`
+                  document.getElementById('buy').innerText = 'Added to cart'
+                  gsap.to(document.getElementById('addedAnn'), {x: -350})
+                  setTimeout(function(){
+                  gsap.to(document.getElementById('addedAnn'), {x: 350})
+                  }, 5000)
+                })
+              }
+          })
+        })
+
+        //BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY BUY 
 
         document.getElementById('bookCover').src = book.imageURL
         document.getElementById('header').innerHTML = `${book.name}`
@@ -72,7 +148,6 @@ if (user) {
         var minBook = 0
         var maxBook = 3
         const matched = bookResult.filter((a)=>a.type.split(', ')[0] === genres[0])
-        console.log(matched)
         document.getElementById('shelf').innerHTML = ''
         matched.slice(minBook, maxBook).forEach(function(item){
           const div = document.createElement('div')
