@@ -441,3 +441,75 @@
     font-size: 15px;
     font-style: italic;
 }
+
+/*------------------------*/
+.rentModel{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 350px;
+    height: min-content;
+    top: 150px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.rentHd{
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.rentIn{
+    color: rgb(56, 56, 56);
+    font-weight: 400;
+}
+
+.duration{
+    box-shadow: 0px 0px 10px rgb(188, 188, 188);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.dHd{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dDes{
+    display: flex;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.ssd{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.ssp{
+    color: rgb(107, 107, 107);
+}
+
+.pck{
+    width: 100%;
+    height: 50px;
+    background-color: gold;
+    border-style: none;
+    border-radius: 13px;
+    margin: 30px 0px 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.modelCv{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0px;
+    height: 1000px;
+    width: 100%;
+    z-index: 101;
+}

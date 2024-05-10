@@ -66,6 +66,44 @@ if (user) {
             document.getElementById('rentOther').style.display = 'block'
           }
         })
+        //RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT 
+
+        document.getElementById('rentOption').addEventListener('click', function(){
+          document.getElementById('modelCv').style.display = 'block'
+          for (let i=0; i<document.querySelectorAll('.rentLi').length; i++){
+            if(document.querySelectorAll('.rentLi')[i].classList[2] === 'selected'){
+              var rentPrice = 0
+              if(document.querySelectorAll('.rentLi')[i].innerText.slice(0, 2) == 3){
+                rentPrice = ((book.price/30)*0.96).toFixed(2)
+              }else if(document.querySelectorAll('.rentLi')[i].innerText.slice(0, 2) == 7){
+                rentPrice = ((book.price/4)*0.94).toFixed(2)
+              }else{
+                rentPrice = (book.price*0.92).toFixed(2)
+              }
+
+              //proceed checkout
+            db.ref('users/' + uid + '/detail/pending').get()
+            .then((snapshot) =>{
+              const val = snapshot.val()
+              document.getElementById('pck').addEventListener('click', function(){
+                db.ref('users/' + uid + '/detail/pending').child(val.length).set(book.id + 'd' + document.querySelectorAll('.rentLi')[i].innerText.slice(0, 2))
+                .then(()=>{window.location.href = './user/checkout.html'})
+              })
+            })
+
+              document.getElementById('rentIn').innerHTML = `Rent <span style="font-style: italic;">"${book.name}"</span> for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}`
+
+              document.getElementById('rentIn1').innerHTML = `This book will be available in your library and readable for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)} after this purchase, you can't refund after the purchase`
+
+              document.getElementById('duration').innerHTML = `
+              <h1 class="dHd">${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}</h1>
+              <div class="dDes">
+                  <p class="ssd">Rent for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}, renew manually</p> <p class="ssd ssp">$${rentPrice}</p>
+              </div>`
+            }
+          }
+        })
+        
 
         //CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART
 
@@ -281,7 +319,7 @@ if (user) {
             sv.innerHTML = `Save`
           }
         })
-        //wishlist added-------------------
+        //WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST 
           wl.addEventListener('click', ()=>{
             db.ref('users/' + user.uid + '/detail/wishlist').get()
             .then((snapshot)=>{
@@ -301,6 +339,8 @@ if (user) {
             })
             .catch((e)=>alert(e))
           })
+
+        //WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST WISHLIST 
         //Save added--------------------------
         sv.addEventListener('click', ()=>{
           db.ref('users/' + user.uid + '/detail/saved').get()
@@ -452,5 +492,13 @@ document.getElementById('moreOption').addEventListener('click', function(){
     document.getElementById('buyOther').style.display = 'block'
   }else{
     document.getElementById('buyOther').style.display = 'none'
+  }
+})
+
+document.getElementById('modelCv').addEventListener('click', function(e){
+  if(document.getElementById('rentModel').contains(e.target)){
+
+  }else{
+    document.getElementById('modelCv').style.display = 'none'
   }
 })
