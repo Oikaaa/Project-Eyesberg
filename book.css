@@ -262,8 +262,8 @@
 }
 
 .suggImg{
-    height: 300px;
     width: 210px;
+    aspect-ratio: 1/1.5;
     border-radius: 0px 15px 15px 0px;
     transition: 0.5s;
 }

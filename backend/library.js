@@ -43,7 +43,7 @@ if (user) {
             }
             document.getElementById('containerL').innerHTML = ''
             const val = snapshot.val()
-            val.slice(1, 5).forEach((item)=>{
+            val.slice(1, 6).forEach((item)=>{
               const filteredB = book.find((b)=>b.id===item)
               const div = document.createElement('div')
               div.classList.add('bookL')

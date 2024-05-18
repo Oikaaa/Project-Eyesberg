@@ -47,8 +47,75 @@
             <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
         </ul>
     </div>
+    <div class="upperBanner">
+        <h1 style="font-weight: 300; margin: 0px; margin-bottom: 20px; font-size: 18px;">Be sure that your information is correct before continue!</h1>
+    </div>
     <div class="wcontainer">
-
+        <h1 class="pmHd">Payment Checkout</h1>
+        <div class="mainPC">
+            <div class="tab">
+                <h3 class="atp">Amount to pay</h3>
+                <h1 class="atpP" id="finaleUPrice">$0.00</h1>
+                <hr class="hras">
+                <table class="tablessa" id="tablessa">
+                    <tr class="tr">
+                        <td class="td tdHD">Item name</td>
+                        <td class="td tdHD dr">Duration</td>
+                        <td class="td tdHD dp">Price</td>
+                    </tr>
+                </table>
+                <hr class="hras hrasB">
+                <div class="tt">
+                    <h1 class="ttD">Total:</h1>
+                    <h1 class="ttP" id="finalePrice">$0.00</h1>
+                </div>
+            </div>
+            <div class="pinf">
+                <h3 class="atp pmi">Payment Information</h3>
+                <div style="width: 100%; display: flex; flex-direction: column; height: 100%;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; width: 85%;">
+                            <div>
+                                <h4 class="nas">First Name</h4>
+                                <input class="nasd" type="text" value="First name" id="fname" disabled>
+                            </div>
+                            <div>
+                                <h4 class="nas">Last Name</h4>
+                                <input class="nasd" type="text" value="Last name" id="lname" disabled>
+                            </div>
+                        </div>
+                        <div style="width: 85%; margin-top: 5px;">
+                            <h4 class="nas">Address</h4>
+                            <input class="nasds" type="text" value="Address" id="address" disabled>
+                        </div>
+                        <p style="font-style: italic; color: gray; font-weight: 300; font-size: 13px; margin: 0px; margin-top: 5px;">*Note: Change your information in setting</p>
+                        <div style="margin-top: 15px;">
+                            <div style="width: 85%;" class="card">
+                                <h4 class="nas">Card number</h4>
+                                <input class="nasc sads" type="text" id="c-number" placeholder="1234 5678 9000 0000" required>
+                            </div>
+                            <div style="display: flex; justify-content: left; width: 60%; margin-top: 10px;">
+                                <div class="card">
+                                    <h4 class="nas">Expire Date</h4>
+                                    <input class="nasc" type="text" id="e-number" placeholder="XX / XX" maxlength="5" required>
+                                </div>
+                                <div class="card ssasd">
+                                    <h4 class="nas">CVC</h4>
+                                    <input class="nasc" type="text" id="cvc" placeholder="XXX" maxlength="3" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; margin-top: 25px;">
+                            <input id="poas" type="checkbox">
+                            <label style="font-size: 15px; margin: 0px; margin-left: 5px;">Policies & <a href="#">Terms of use</a></label>
+                        </div>
+                        <button class="pck" id="pck">Proceed Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="footer">

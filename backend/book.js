@@ -47,7 +47,7 @@ if (user) {
         //RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT 
         document.getElementById('da').innerHTML = `3 Days <span class="fts"><span style="text-decoration: line-through;">$${(book.price/30).toFixed(2)}</span> $${(book.price/30 * 0.96).toFixed(2)}/3 days</span> <i class="fa fa-check" aria-hidden="true"></i>`
         document.getElementById('we').innerHTML = `7 Days <span class="fts"><span style="text-decoration: line-through;">$${(book.price/4).toFixed(2)}</span> $${(book.price/4 * 0.94).toFixed(2)}/7 days</span>`
-        document.getElementById('mo').innerHTML = `30 Days <span class="fts"><span style="text-decoration: line-through;">$${book.price}</span> $${(book.price * 0.92).toFixed(2)}/30 days</span>`
+        document.getElementById('mo').innerHTML = `1 Month <span class="fts"><span style="text-decoration: line-through;">$${book.price}</span> $${(book.price * 0.92).toFixed(2)}/30 days</span>`
         document.querySelectorAll('.rentLi').forEach(function(item){
           item.addEventListener('click', function(){
             document.querySelectorAll('.rentLi').forEach(function(ite){
@@ -82,24 +82,24 @@ if (user) {
               }
 
               //proceed checkout
-            db.ref('users/' + uid + '/detail/pending').get()
-            .then((snapshot) =>{
-              const val = snapshot.val()
-              document.getElementById('pck').addEventListener('click', function(){
-                db.ref('users/' + uid + '/detail/pending').child(val.length).set(book.id + 'd' + document.querySelectorAll('.rentLi')[i].innerText.slice(0, 2))
-                .then(()=>{window.location.href = './user/checkout.html'})
+              db.ref('users/' + uid + '/detail/pending').get()
+              .then((snapshot) =>{
+                const val = snapshot.val()
+                document.getElementById('pck').addEventListener('click', function(){
+                  db.ref('users/' + uid + '/detail/pending').child(val.length).set(book.id + 'd' + document.querySelectorAll('.rentLi')[i].innerText.slice(0, 1))
+                  .then(()=>{window.location.href = './user/checkout.html'})
+                })
               })
-            })
 
-              document.getElementById('rentIn').innerHTML = `Rent <span style="font-style: italic;">"${book.name}"</span> for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}`
+                document.getElementById('rentIn').innerHTML = `Rent <span style="font-style: italic;">"${book.name}"</span> for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}`
 
-              document.getElementById('rentIn1').innerHTML = `This book will be available in your library and readable for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)} after this purchase, you can't refund after the purchase`
+                document.getElementById('rentIn1').innerHTML = `This book will be available in your library and readable for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)} after this purchase, you can't refund after the purchase`
 
-              document.getElementById('duration').innerHTML = `
-              <h1 class="dHd">${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}</h1>
-              <div class="dDes">
-                  <p class="ssd">Rent for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}, renew manually</p> <p class="ssd ssp">$${rentPrice}</p>
-              </div>`
+                document.getElementById('duration').innerHTML = `
+                <h1 class="dHd">${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}</h1>
+                <div class="dDes">
+                    <p class="ssd">Rent for ${document.querySelectorAll('.rentLi')[i].innerText.slice(0, 7)}, renew manually</p> <p class="ssd ssp">$${rentPrice}</p>
+                </div>`
             }
           }
         })
