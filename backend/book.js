@@ -59,16 +59,20 @@ if (user) {
             this.classList.add('selected')
           })
         })
-        document.getElementById('durationOption').addEventListener('click', function(){
-          if(document.getElementById('rentOther').style.display === 'block'){
-            document.getElementById('rentOther').style.display = 'none'
-          }else{
-            document.getElementById('rentOther').style.display = 'block'
-          }
-        })
         //RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT 
-
-        document.getElementById('rentOption').addEventListener('click', function(){
+        console.log(book.id)
+        db.ref('users/' + uid + '/detail/pending').get()
+        .then((snapshot)=>{
+          const found = snapshot.val().find((i) => i === book.id)
+          if(found === undefined){
+            document.getElementById('durationOption').addEventListener('click', function(){
+              if(document.getElementById('rentOther').style.display === 'block'){
+                document.getElementById('rentOther').style.display = 'none'
+              }else{
+                document.getElementById('rentOther').style.display = 'block'
+              }
+            })
+            document.getElementById('rentOption').addEventListener('click', function(){ 
           document.getElementById('modelCv').style.display = 'block'
           for (let i=0; i<document.querySelectorAll('.rentLi').length; i++){
             if(document.querySelectorAll('.rentLi')[i].classList[2] === 'selected'){
@@ -102,9 +106,20 @@ if (user) {
                 </div>`
             }
           }
+            })
+          }else{
+            document.getElementById('rentOption').style.background = '#F2F2F2' 
+            document.getElementById('rentOption').style.color = '#767676' 
+            document.getElementById('durationOption').style.color = '#767676' 
+            document.getElementById('durationOption').style.background = '#F2F2F2' 
+            document.getElementById('rentOption').style.cursor = 'default' 
+            document.getElementById('durationOption').style.cursor = 'default' 
+            document.getElementById('rent').style.borderColor = '#F2F2F2'
+          }
         })
-        
+        if(true){
 
+        }
         //CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART CART
 
         db.ref('users/' + uid + '/detail/cart').get()

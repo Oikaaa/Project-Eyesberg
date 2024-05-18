@@ -26,12 +26,33 @@ const firebaseConfig = {
         const email = user.email;
         const photoURL = user.photoURL;
         const emailVerified = user.emailVerified;
-        console.log(user)
+        const num = document.getElementById('num')
+        const exp = document.getElementById('exp')
 
         document.getElementById('nameField').innerText = displayName
         document.getElementById('avatar').src = photoURL
         document.getElementById('dpname').value = displayName
         document.getElementById('userAvatar').src = photoURL
+
+        db.ref('users/' + uid + '/detail/card').get()
+        .then((snapshot)=>{
+          num.value = snapshot.val().number
+          exp.value = snapshot.val().expire
+        })
+
+        document.getElementById('saveasdbtn').addEventListener('click', function(){
+          const num = document.getElementById('num')
+          const exp = document.getElementById('exp')
+          const card = {
+            expire: exp.value,
+            number: num.value
+          }
+          db.ref('users/' + uid + '/detail/card').update(card)
+          gsap.to(".savedAnn", { x: -350 })
+          setTimeout(() =>{
+          gsap.to(".savedAnn", { x: 350 })
+          },3000)
+        })
 
           if(emailVerified === true){
             document.getElementById('verMail').style.display = 'none'
@@ -55,9 +76,9 @@ const firebaseConfig = {
               user.reauthenticateWithCredential(credential).then(() => {
                 user.updateEmail(document.getElementById('emailChange').value).then(() => {
                   gsap.to(".savedAnn", { x: -350 })
-                            setTimeout(() =>{
-                              gsap.to(".savedAnn", { x: 350 })
-                              },3000)
+                  setTimeout(() =>{
+                  gsap.to(".savedAnn", { x: 350 })
+                  },3000)
                 }).catch((error) => {
                   alert(error)
                   console.log(error.message)

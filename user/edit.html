@@ -598,6 +598,28 @@
         </div>
         <div class="edDisplay apd" style="display: none;">
         </div>
+        <div class="edDisplay pmd" style="display: none;">
+            <h1 class="pN">Payment Methods</h1>
+            <p class="pNp">How you will purchase the products</p>
+            <p class="inpP">
+                <label class="inpL" for="display_name">Credit Card Number<span class="required">*</span></label>
+                <br>
+                <input class="inputNS require" id="num" value = "" type="text" placeholder="1234 5678 9000 0000" required>
+            </p>
+            <div style="display: flex;">
+                <p class="inpP" style="margin-top: 0px;">
+                    <label class="inpL" for="fName">Expire date<span class="required">*</span></label>
+                    <br>
+                    <input style="width: 75px;" maxlength="5" class="inputNS require" id="exp" placeholder="XX / XX" value = "" type="text" required>
+                </p>
+                <p class="inpP" style="margin-left: 20px; margin-top: 0px;">
+                    <label class="inpL" for="lName">CVC<span class="required">*</span></label>
+                    <br>
+                    <input style="width: 75px;" maxlength="3" class="inputNS require" id="cvc" placeholder="XXX" value = "" type="text" required>
+                </p>
+            </div>
+            <button class="savebtn" id="saveasdbtn">Save</button>
+        </div>
     </div>
     <div class="savedAnn" id="savedAnn">
         <h1 class="savedAnHd"><i class="fa check fa-check-circle" aria-hidden="true"></i>Changes Saved</h1>

@@ -70,11 +70,9 @@ submitBtn.addEventListener('click', (e)=>{
               zipcode: '1001',
               address: 'None',
             },
-            payment: {
-              cardId: 'null',
-              nameHolder: 'null',
-              cvc: 'null',
-              expire: 'null',
+            card: {
+              number: 'XXXX XXXX XXXX XXXX',
+              expire: 'XX/XX'
             },
             wishlist: [0],
             saved: [0],
