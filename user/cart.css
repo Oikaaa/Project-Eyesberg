@@ -1,5 +1,6 @@
 .wcontainer{
     margin: 100px 10%;
+    margin-bottom: 30px;
 }
 
 .wwcontainer{
@@ -48,4 +49,16 @@
 .wishBook{
     width: 150px;
     margin-right: 50px;
+}
+
+.pck{
+    background-color: #ffd700; border: none; padding: 15px; border-radius: 10px; width: 300px; font-size: 16px; margin-top: 15px;
+    font-weight: 500;
+    height: 50px;
+    margin-bottom: 100px;
+}
+
+.pck:hover{
+    cursor: pointer;
+    background-color: #ffe241;
 }

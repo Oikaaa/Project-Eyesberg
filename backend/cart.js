@@ -112,3 +112,6 @@ document.querySelector('.gotoProfile').addEventListener('click',()=>{
     window.location.href = './cart.html'
   })
   
+  document.getElementById('pck').addEventListener('click',()=>{
+    window.location.href = './checkout.html'
+  })
