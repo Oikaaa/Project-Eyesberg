@@ -8,8 +8,8 @@
 }
 
 
-.wBookImage{
-    width: 150px;
+.wBookImg{
+    height: 225px;
     aspect-ratio: 1/1.5;
 }
 
@@ -28,10 +28,24 @@
     margin: 0px;
     font-size: 18px;
     text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.wishBook:hover{
+    cursor: pointer;
 }
 
 .wBookAuthor{
     margin: 0px;
     font-size: 15px;
     text-align: center;
+}
+
+.wishBook{
+    width: 150px;
+    margin-right: 50px;
 }

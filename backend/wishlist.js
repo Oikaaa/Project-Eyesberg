@@ -36,6 +36,11 @@ if (user) {
           .then((snapshot)=>{
             document.getElementById('wwcontainer').innerHTML = ""
             const wB = snapshot.val().slice(1)
+            if(wB.length === 0){
+              document.getElementById('wwcontainer').innerHTML = `
+              <h1 style="font-weight: 300; font-size: 25px;">Doesn't have any books here:(</h1>
+              `
+            }
             wB.forEach(function(n){
               const findedB = wishBook.find((b) => b.id===n)
               const wBook = document.createElement('div')

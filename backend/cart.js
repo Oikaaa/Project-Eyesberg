@@ -12,6 +12,7 @@ const firebaseConfig = {
   
   const auth = firebase.auth()
   const database = firebase.database()
+  const db = database
   const user = firebase.auth().currentUser;
   var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -27,6 +28,42 @@ if (user) {
 
         document.getElementById('nameField').innerText = displayName
         document.getElementById('avatar').src = photoURL
+
+        async function getApi(){
+          const res = await fetch('http://localhost:8080/api/books')
+          const wishBook = await res.json()
+          db.ref('users/' + uid + '/detail/cart').get()
+          .then((snapshot)=>{
+            document.getElementById('wwcontainer').innerHTML = ""
+            const wB = snapshot.val().slice(1)
+            if(wB.length === 0){
+              document.getElementById('wwcontainer').innerHTML = `
+              <h1 style="font-weight: 300; font-size: 25px;">Doesn't have any books here:(</h1>
+              `
+            }
+            wB.forEach(function(n){
+              const findedB = wishBook.find((b) => b.id===n)
+              const wBook = document.createElement('div')
+              wBook.classList.add('wishBook')
+              wBook.innerHTML = `
+              <div class="woverflow">
+                  <img class="wBookImg" src="${findedB.imageURL}" alt="">
+              </div>
+                  <h2 class="wBookHeader">${findedB.name}</h2>
+                  <p class="wBookAuthor">${findedB.author}</p>
+              </div>`
+              wBook.addEventListener('click', ()=>{
+                db.ref('users/' + uid).update({bookId: findedB.id})
+                .then(()=>{
+                  window.location.href = "../book.html"
+                })
+                .catch((e)=>alert(e))
+              })
+              document.getElementById('wwcontainer').appendChild(wBook)
+            })
+          })
+        }
+        getApi()
     }
     } else {
       document.querySelectorAll('.profileNavi').forEach((item)=>{
