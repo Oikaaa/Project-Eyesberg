@@ -60,7 +60,6 @@ if (user) {
           })
         })
         //RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT RENT 
-        console.log(book.id)
         db.ref('users/' + uid + '/detail/pending').get()
         .then((snapshot)=>{
           const found = snapshot.val().find((i) => i === book.id)
@@ -177,14 +176,58 @@ if (user) {
         document.getElementById('bookCover').src = book.imageURL
         document.getElementById('header').innerHTML = `${book.name}`
         document.getElementById('author').innerHTML = `${book.author}`
-        document.getElementById('rating').innerHTML = `
-        <i class="fa star fa-star" aria-hidden="true"></i>
-        <i class="fa star fa-star" aria-hidden="true"></i>
-        <i class="fa star fa-star" aria-hidden="true"></i>
-        <i class="fa star fa-star" aria-hidden="true"></i>
-        <i class="fa star fa-star" aria-hidden="true"></i>
-        ${book.rate}
-        `
+        //RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING 
+        var rating = Number(book.rate)
+        var unit = Math.floor(rating/2)
+        var decimal = 0
+
+        document.getElementById('rating').innerHTML = ``
+
+        for (i=0; i<unit; i++){
+          const full_star = document.createElement('i')
+          full_star.classList.add('fa')
+          full_star.classList.add('star')
+          full_star.classList.add('fa-star')
+          full_star.setAttribute('aria-hidden', true)
+          document.getElementById('rating').appendChild(full_star)
+        }
+
+        console.log(rating)
+        console.log(rating/2)
+        console.log(unit)
+        console.log(Number((rating/2 - unit).toFixed(2)))
+
+        if(Number((rating/2 - unit).toFixed(1)) >= 0.75){
+          const full_star = document.createElement('i')
+          full_star.classList.add('fa')
+          full_star.classList.add('star')
+          full_star.classList.add('fa-star')
+          full_star.setAttribute('aria-hidden', true)
+          document.getElementById('rating').appendChild(full_star)
+        }else if(Number((rating/2 - unit).toFixed(1)) < 0.75 && Number((rating/2 - unit).toFixed(1)) >= 0.3){
+          const full_star = document.createElement('i')
+          full_star.classList.add('fa')
+          full_star.classList.add('star')
+          full_star.classList.add('fa-star-half-o')
+          full_star.setAttribute('aria-hidden', true)
+          document.getElementById('rating').appendChild(full_star)
+        }else{
+          const full_star = document.createElement('i')
+          full_star.classList.add('fa')
+          full_star.classList.add('star')
+          full_star.classList.add('fa-star-o')
+          full_star.setAttribute('aria-hidden', true)
+          document.getElementById('rating').appendChild(full_star)
+        }
+        const ha = document.createElement('p')
+        ha.setAttribute('style', 'margin: 0px;')
+        ha.innerText = book.rate
+        document.getElementById('rating').appendChild(ha)
+
+
+
+
+        //RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING RATING 
         document.getElementById('price').innerHTML = `<sup style="font-size: 30px;">$</sup>${book.price}`
 
         //Genres--------------------------

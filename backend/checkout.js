@@ -110,6 +110,7 @@ if (user) {
           const val = snapshot.val()
           document.getElementById('fname').value = val.firstName.toUpperCase()
           document.getElementById('lname').value = val.lastName.toUpperCase()
+          document.getElementById('email').value = val.email
           document.getElementById('address').value = val.detail.billing.address.toUpperCase() + ', ' + val.detail.billing.city.toUpperCase() + ', ' + val.detail.billing.country.toUpperCase()
         })
 
