@@ -1,22 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyAJ-xoAzovjhzestjTOenAceUPe_Gn4hUA",
-    authDomain: "eyesberg-386cf.firebaseapp.com",
-    projectId: "eyesberg-386cf",
-    storageBucket: "eyesberg-386cf.appspot.com",
-    messagingSenderId: "916996721492",
-    appId: "1:916996721492:web:4e6318856a7e8d89d6d6c1",
-    databaseURL: "https://eyesberg-386cf-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    measurementId: "G-N9QMKLQP1L"
-  };
-  firebase.initializeApp(firebaseConfig);
-  
-  const auth = firebase.auth()
-  const database = firebase.database()
-  const db = database
-  const user = firebase.auth().currentUser;
-  var provider = new firebase.auth.GoogleAuthProvider();
-
-//------------Firebase--------------------
 auth.onAuthStateChanged((user) => {
   if (user) {
       const uid = user.uid;
@@ -135,7 +116,7 @@ async function bookApi(){
         }
         db.ref('users/' + user.uid).update(bookId)
         .then(()=>{
-          window.location.href = "./book.html"
+          window.location.href = `./book.html?id=${item.id}`
         })
         .catch((e)=>{console.log(e)})
       })
@@ -187,7 +168,7 @@ async function bookApi(){
         }
         db.ref('users/' + user.uid).update(bookId)
         .then(()=>{
-          window.location.href = "./book.html"
+          window.location.href = `./book.html?id=${item.id}`
         })
         .catch((e)=>{console.log(e)})
       })
@@ -241,7 +222,7 @@ async function bookApi(){
         }
         db.ref('users/' + user.uid).update(bookId)
         .then(()=>{
-          window.location.href = "./book.html"
+          window.location.href = `./book.html?id=${item.id}`
         })
         .catch((e)=>{console.log(e)})
       })
@@ -293,7 +274,7 @@ async function bookApi(){
         }
         db.ref('users/' + user.uid).update(bookId)
         .then(()=>{
-          window.location.href = "./book.html"
+          window.location.href = `./book.html?id=${item.id}`
         })
         .catch((e)=>{console.log(e)})
       })
@@ -344,7 +325,7 @@ async function bookApi(){
         }
         db.ref('users/' + user.uid).update(bookId)
         .then(()=>{
-          window.location.href = "./book.html"
+          window.location.href =`./book.html?id=${item.id}`
         })
         .catch((e)=>{console.log(e)})
       })

@@ -17,20 +17,21 @@
     <div class="navigation" id="navigation">
         <div class="naviField">
             <ul class="naviList">
-                <li class="li"><a class="list" href="../index.html">Home</a></li>
-                <li class="li"><a class="list" href="../trending.html">Trending</a></li>
-                <li class="li"><a class="list" href="../genres.html">Genres</a></li>
-                <li class="li"><a class="list" href="../library.html">Library</a></li>
+                <li class="li"><a class="list" href="./index.html">Home</a></li>
+                <li class="li"><a class="list" href="./trending.html">Trending</a></li>
+                <li class="li"><a class="list" href="./genres.html">Genres</a></li>
+                <li class="li"><a class="list" href="./library.html">Library</a></li>
             </ul>
         </div>
+        <input type="text" id="searchInput" class="searchInput" placeholder="What you want to read?">
         <div class="profileField">
             <div class="featureIcon">
-                <i class="fa fa-search search naviFa" aria-hidden="true"></i>
+                <i id="search" class="fa fa-search search naviFa" aria-hidden="true"></i>
                 <i class="fa fa-bell naviFa" aria-hidden="true"></i>
             </div>
             <div class="profile" id="profile" onmouseover="profileDrop()" onmouseout="profileOut()">
                 <div style="display: flex; align-items: center;">
-                    <img class="avatar" id="avatar" src="./image/guest_avatar.jpg" alt="Photo">
+                    <img class="avatar" id="avatar" src="./image/guest_avatar.jpg" alt="photo">
                     <h5 id="nameField" class="nameField">Sign In</h5>
                 </div>
                 <i class="fa fa-sort-desc naviFaP" aria-hidden="true"></i>
@@ -46,6 +47,12 @@
             <li class="profileNavi gotoSetting">Setting</li>
             <li class="profileNavi logout" id="logOutBtn">Sign Out</li>
         </ul>
+    </div>
+    <div style="display: none;" id="search_engine" class="search_engine">
+        <h3 style="margin: 0px; margin-left: 10px;">Do you mean</h3>
+        <div id="con" style="overflow: hidden;overflow-y: scroll;height: min-content; max-height: 300px;" class="sadsadsa">
+            <h1 style="font-weight: 200; color: gray; font-size: 20px; text-align: center;">We can't find the book you want :(</h1>
+        </div>
     </div>
     <div class="wcontainer">
         <h1 style="font-size: 40px;">Cart</h1>
@@ -121,6 +128,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="../backend/subgeneral.js"></script>
     <script src="../backend/cart.js"></script>
 </body>
 </html>

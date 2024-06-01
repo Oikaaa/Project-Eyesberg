@@ -875,3 +875,85 @@
 .dcm:hover{
     transform: translateY(-5px);
 }
+
+.search_engine{
+    position: fixed;
+    height: min-content;
+    background-color: white;
+    z-index: 80;
+    top: 0px;
+    width: 600px;
+    padding: 85px 0px;
+    padding-bottom: 0px;
+    border: 1px solid rgb(184, 184, 184);
+    left: 50%;
+    transform: translateX(-36%);
+}
+
+.searchInput{
+    z-index: 102;
+    top: 8px;
+    left: 50%;
+    background-color: rgb(244, 244, 244);
+    padding: 10px;
+    padding-right: 100px;
+    border: none;
+    height: 30px;
+    border-radius: 8px;
+    width: 50%;
+    margin: 0px 8px;
+    font-size: 15px;
+    display: none;
+}
+
+.sImg{
+    aspect-ratio: 1/1.5;
+    height: 125px;
+    object-fit: fill;
+}
+
+.sBook{
+    display: flex;
+    font-style: none;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    padding: 10px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.hdg{
+    text-decoration: none;
+    font-style: none;
+    margin: 0px;
+}
+
+.hdas{
+    text-decoration: none;
+    font-style: none;
+    font-size: 20px;
+}
+
+.adas{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.sBook:hover{
+    cursor: pointer;
+    background-color: rgb(238, 238, 238);
+}
+
+.desss{
+    text-wrap: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 200;
+    color: rgb(94, 94, 94);
+}
