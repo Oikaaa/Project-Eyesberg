@@ -1,8 +1,9 @@
 const express = require('express');
+const http = require('http')
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -21,17 +22,17 @@ app.post('/send-email', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'EyesBerg.servicesNotification@gmail.com',
-      pass: '123456791o'
+      user: 'eyesberg.servicesnotification@gmail.com',
+      pass: 'tfxq tcoj qwmp ytce'
     }
   });
 
   // Email content
   const mailOptions = {
-    from: 'EyesBerg.servicesNotification@gmail.com',
+    from: '"Eyesberg" <eyesberg.servicesnotification@gmail.com>',
     to: recipient,
-    subject: subject,
-    text: message
+    subject: 'Checkout successful',
+    text: 'Thank you for shopping with us, you had completed checkout the following item:'
   };
 
   // Send mail with defined transport object
