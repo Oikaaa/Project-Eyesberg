@@ -51,6 +51,54 @@
           .catch((e)=>{
             console.log(e)
           })
+
+          //-----------------------------LibraryContent-----------------------------------
+          async function getApi(){
+            const res = await fetch('http://localhost:8080/api/books')
+            const books = await res.json()
+
+            document.querySelectorAll('.libraryContent').forEach(function(item){
+              item.addEventListener('click', function(){
+                document.querySelectorAll('.libraryContent').forEach(function(list){
+                  list.classList.remove('current')
+                })
+                this.classList.add('current')
+                for(i=0;i<4;i++){
+                  if(document.querySelectorAll('.libraryContent')[i].classList[1] == 'current'){
+                    var cat = document.querySelectorAll('.libraryContent')[i].innerText.toLowerCase()
+                    db.ref('users/' + uid + '/detail/' + cat).get()
+                    .then((snapshot)=>{
+                      const value = snapshot.val()
+                      console.log(value.slice(1))
+                      document.getElementById('libraryDisplay').innerHTML = ""
+                      if(value.slice(1).length !== 0){
+                        value.slice(1).forEach(function(item){
+                          const findBook = books.find((i)=>i.id == item)
+                          const div = document.createElement('div')
+                          div.classList.add('bookLi')
+                          div.addEventListener('click', function(){
+                            const bookId = {
+                              bookId: findBook.id
+                            }
+                            db.ref('users/' + uid).update(bookId)
+                            .then(()=>{
+                              window.location.href = '../book.html' + `?id=${findBook.id}`
+                            })
+                          })
+                          div.innerHTML = `
+                          <img style="height: 150px; aspect-ratio: 1/1.5; object-fit: cover;" src="${findBook.imageURL}" alt="">`
+                          document.getElementById('libraryDisplay').appendChild(div)
+                        })
+                      }else{
+                        document.getElementById('libraryDisplay').innerHTML = `<h1 style="font-size: 20px; font-weight: 300; text-align: center; margin-top: 125px; width: 100%">This dude doesn't like book:(</h1>`
+                      }
+                    })
+                  }
+                }
+              })
+            })
+          }
+          getApi()
         } 
     } else {
       document.querySelectorAll('.profileNavi').forEach((item)=>{
@@ -105,4 +153,3 @@ function profileDrop(){
   document.querySelector('.gotoCart').addEventListener('click',()=>{
     window.location.href = './cart.html'
   })
-  

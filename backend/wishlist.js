@@ -36,7 +36,7 @@ if (user) {
               wBook.addEventListener('click', ()=>{
                 db.ref('users/' + uid).update({bookId: findedB.id})
                 .then(()=>{
-                  window.location.href = `./book.html?id=${findedB.id}`
+                  window.location.href = '../book.html'+ `?id=${findedB.id}`
                 })
                 .catch((e)=>alert(e))
               })
