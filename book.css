@@ -85,6 +85,22 @@
     
 }
 
+.rentOptionn{
+    border-radius: 50px 50px 50px 50px;
+    z-index: 70;
+    bottom: 0px;
+    padding: 10px;
+    transition: 0.2s;
+    background-color: rgb(255, 222, 38);
+    color: black;
+    border-style: none;
+    width: 100%;
+}
+
+.rentOptionn:hover{
+    cursor: pointer;
+}
+
 .durationOption{
     border-radius: 0px 50px 50px 0px;
     z-index: 70;
