@@ -53,7 +53,6 @@
             const credential = promptForCredentials();
             user.reauthenticateWithCredential(credential).then(() => {
               // User re-authenticated.
-              console.log('hi')
             }).catch((error) => {
               // An error occurred
               // ...
@@ -163,8 +162,6 @@
                 const anyoneES = document.getElementById('anyoneES')
                 const nooneES = document.getElementById('onlyES')
 
-                console.log(setting.message)
-
                 document.querySelectorAll('.ES').forEach(function(item){
                   item.removeAttribute('checked')
                   if(setting.message === true){
@@ -241,41 +238,52 @@
             namePublic = false
           }
         })
-        console.log(namePublic)
         //profile
         document.getElementById('savebtn').addEventListener('click', function(){
+          db.ref('users/' + uid).get()
+          .then((snapshot)=>{
+            const currentValue = snapshot.val()
             if(firstName.value !== "" || dpname.value !== "" || lastName.value !== "" || country.value !== "" ){
               const changes = {
                   firstName: firstName.value,
                   lastName: lastName.value,
                   displayName: user.displayName,
                   email: user.email,
+                  photoURL: document.getElementById('photo').value,
+                  bookId: currentValue.bookId,
                   description: descriptionDetail.value,
                   detail:{
-                      gender: gender.value,
-                      dob: {
+                    rate: currentValue.detail.rate,
+                    gender: gender.value,
+                    dob: {
                       date: day.value,
                       month: month.value,
                       year: year.value,
-                      },
-                      billing: {
+                    },
+                    billing: {
                       country: country.value,
                       city: city.value,
                       zipcode: zipcode.value,
                       address: address.value,
-                      },
-                      wishlist: ['null'],
-                      saved: ['null'],
-                      cart: ['null'],
-                      read: ['null'],
-                      reading: ['null'],
+                    },
+                    card:{
+                      number: currentValue.detail.card.number,
+                      expire: currentValue.detail.card.expire,
+                    },
+                    wishlist: currentValue.detail.wishlist,
+                    saved: currentValue.detail.saved,
+                    cart: currentValue.detail.cart,
+                    read: currentValue.detail.read,
+                    reading: currentValue.detail.reading,
+                    rent: currentValue.detail.rent,
+                    pending: currentValue.detail.pending,
                   },
                   setting:{
-                      namePublic: namePublic,
-                      message: true,
-                      friend: true,
-                      profileViewable: true,
-                      emailViewable: false
+                    namePublic: namePublic,
+                    message: true,
+                    friend: true,
+                    profileViewable: true,
+                    emailViewable: false
                   },
               };
               db.ref('users/' + user.uid).update(changes)              
@@ -295,6 +303,7 @@
             }else{
               alert('Fill all the required form')
             }
+          })
         })
 
         //setting
@@ -390,12 +399,10 @@
     } else {
       document.querySelectorAll('.profileNavi').forEach((item)=>{
         item.addEventListener('click',function() {
-          console.log('hello')
           window.location.replace('../register.html')
         })
       })
       document.getElementById('profile').addEventListener('click',function() {
-        console.log('hello')
         window.location.replace('../register.html')
       })
     }

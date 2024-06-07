@@ -86,13 +86,14 @@
                     </ul>
                   </div>
                   <div id="starRatingg" style="display: flex; justify-content: center; margin-top: 10px;">
-                      <i class="fa starO fa-star-o " id="star1" onmouseover="star1()" onmouseout="starReset()"  aria-hidden="true"></i>
-                      <i class="fa starO fa-star-o " id="star2" onmouseover="star2()" onmouseout="starReset()" aria-hidden="true"></i>
-                      <i class="fa starO fa-star-o " id="star3" onmouseover="star3()" onmouseout="starReset()" aria-hidden="true"></i>
-                      <i class="fa starO fa-star-o " id="star4" onmouseover="star4()" onmouseout="starReset()" aria-hidden="true"></i>
-                      <i class="fa starO fa-star-o " id="star5" onmouseover="star5()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starFa starO fa-star-o " id="star1" onmouseover="star1()" onmouseout="starReset()"  aria-hidden="true"></i>
+                      <i class="fa starFa starO fa-star-o " id="star2" onmouseover="star2()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starFa starO fa-star-o " id="star3" onmouseover="star3()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starFa starO fa-star-o " id="star4" onmouseover="star4()" onmouseout="starReset()" aria-hidden="true"></i>
+                      <i class="fa starFa starO fa-star-o " id="star5" onmouseover="star5()" onmouseout="starReset()" aria-hidden="true"></i>
                   </div>  
-                  <p style="text-align: center; margin: 5px 0px 0px 0px;">Rate this book</p>
+                  <p style="text-align: center; margin: 5px 0px 0px 0px;">Rate this book:</p>
+                  <p style="text-align: center; font-size: 28px; margin: 0px; font-weight: 600; color: brown;" id="youRate">0.0</p>
               </div>
             </div>
         </div>
@@ -182,6 +183,18 @@
                             </div>
                         </div>
                   </div>
+                  <hr style="margin: 50px 0px;">
+              </div>
+              <div class="review">
+                <h1>Reviews</h1>
+                <div>
+                    <textarea name="" id="text" class="textArea" placeholder="Any thought about this item..."></textarea>
+                    <p style="margin: 0px; font-size: 13px; color: rgb(160, 160, 160); font-weight: 400; font-style: italic; margin-bottom: 3px;">Don't forget to rate before post it ^^</p>
+                    <button class="post" id="post">Post</button>
+                </div>
+                <div class="review_container" id="review_container">
+                    <h1 style="font-weight: 200; width: 100%; text-align: center; margin-top: 150px; color: gray;">No one talk about this yet :(</h1>
+                </div>
               </div>
           </div>
     </div>

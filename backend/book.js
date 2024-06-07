@@ -224,7 +224,6 @@ auth.onAuthStateChanged((user) => {
                           .get()
                           .then((snapshot) => {
                             const val = snapshot.val();
-                            console.log(val);
                             const ssv = val.find((b) => b === book.id);
                             if (ssv !== undefined) {
                               //remove from list
@@ -439,8 +438,95 @@ auth.onAuthStateChanged((user) => {
                 document.getElementById("shelf").appendChild(div);
               });
             });
+          
+          //--------------------Post----------------------
+          var starRate = 0
 
-          //----------------------------------------
+          document.querySelectorAll('.starFa').forEach(function(star){
+            star.addEventListener('click', function(){
+              starRate = Number(this.id.slice(4))
+              console.log(starRate)
+              document.getElementById('youRate').innerText = starRate + '.0'
+            })
+          })
+
+          document.getElementById('post').addEventListener('click', function(){
+            const message = document.getElementById('text')
+            db.ref("users/" + user.uid)
+            .get()
+            .then((snapshot) => {
+              const review = {
+                book: book.id,
+                message: message.value,
+                rate: starRate,
+                time: Date.now(),
+                user: snapshot.val().displayName,
+                photoURL: snapshot.val().photoURL
+              }
+              console.log(review)
+              if(message.value !== ""){
+                db.ref("messages/bookReview").get()
+                .then((snapshot)=>{
+                  db.ref("messages/bookReview").child(snapshot.val().length).set(review)
+                  .then(()=>{
+                    window.location.reload()
+                  })
+                })
+              }else{
+                alert('What you want to say?')
+              }
+            });
+          })
+          //--------------------Review Update----------------------
+          db.ref("messages").get()
+          .then((snapshot)=>{
+            const comment = snapshot.val().bookReview
+            const specComment = comment.filter((x) => x.book === book.id)
+            if(specComment.length > 0){
+              document.getElementById('review_container').innerHTML = ''
+            }
+            specComment.forEach(function(item){
+              var stars = []
+
+              for(i=0; i<item.rate; i++){
+                stars.push(`<i class="fa fa-star rvS" aria-hidden="true"></i>`)
+              }
+
+              for(i=0; i<5 - item.rate; i++){
+                stars.push(`<i class="fa fa-star rvS nos" aria-hidden="true"></i>`)
+              }
+
+              function timeConverter(UNIX_timestamp){
+                var a = new Date(UNIX_timestamp);
+                var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                var year = a.getFullYear();
+                var month = months[a.getMonth()];
+                var date = a.getDate();
+                
+                var time = date + ' ' + month + ', ' + year + ' ';
+                return time;
+              }
+
+              const div = document.createElement('div')
+              div.classList.add('rev')
+              div.innerHTML = `
+              <div style="padding: 50px 20px; width: 160px;">
+                  <img class="avaRev" src="${item.photoURL}" alt="">
+                  <h1 class="usrRev" style="width: 130px; text-wrap: wrap">${item.user}</h1>
+              </div>
+              <div style="padding: 55px 20px; padding-bottom: 0px; width: 100%;">
+                <div style="display: flex; align-items: center;">
+                  ${stars.join(' ')}
+                  <p class="date">${timeConverter(item.time)}</p>
+                </div>
+                <p class="text"></p>${item.message}</p>
+                <hr style="margin: 40px 0px;">
+              </div>`
+
+              document.getElementById('review_container').appendChild(div)
+            })
+          })
+          //-------------------------------------------------------
 
           document.getElementById("edition").innerHTML = `
         <h1 class="ediHd">This Edition</h1>
@@ -534,7 +620,6 @@ auth.onAuthStateChanged((user) => {
                   sv.innerHTML = `Save`;
                 } else {
                   //add to list
-                  console.log(snValue[0]);
                   if (snValue[0] === "null") {
                     const kl = {
                       0: book.id,
@@ -558,12 +643,10 @@ auth.onAuthStateChanged((user) => {
   } else {
     document.querySelectorAll(".profileNavi").forEach((item) => {
       item.addEventListener("click", function () {
-        console.log("hello");
         window.location.replace("./register.html");
       });
     });
     document.getElementById("profile").addEventListener("click", function () {
-      console.log("hello");
       window.location.replace("./register.html");
     });
   }

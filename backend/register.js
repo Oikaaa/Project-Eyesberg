@@ -54,6 +54,7 @@ submitBtn.addEventListener('click', (e)=>{
           lastName: lastName.value,
           displayName: username.value,
           email: userEmail.value,
+          photoURL: "https://www.smashingmagazine.com/images/authors/sm-guest-author.jpg",
           bookId: 'null',
           description: 'Describe yourself...',
           detail:{
