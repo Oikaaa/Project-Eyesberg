@@ -38,7 +38,6 @@ async function getApi(){
         if(book.length == 0){
             document.getElementById('con').innerHTML = `<h1 style="font-weight: 200; color: gray; font-size: 20px; text-align: center;">We can't find the book you want :(</h1>`
         }
-        console.log(book)
         book.forEach(function(item){
             const a = document.createElement('a')
             a.classList.add('sBook')

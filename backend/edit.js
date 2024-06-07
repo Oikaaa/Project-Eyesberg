@@ -48,26 +48,22 @@
           document.getElementById('photo').value = user.photoURL
 
           document.getElementById('setMail').addEventListener('click',function(e){
-              e.defaultPrevented()
-              const credential = firebase.auth.EmailAuthProvider.credential(
-                email,
-                document.getElementById('currentEmailChange').value
-              )
-              user.reauthenticateWithCredential(credential).then(() => {
-                user.updateEmail(document.getElementById('emailChange').value).then(() => {
-                  gsap.to(".savedAnn", { x: -350 })
-                  setTimeout(() =>{
-                  gsap.to(".savedAnn", { x: 350 })
-                  },3000)
-                }).catch((error) => {
-                  alert(error)
-                  console.log(error.message)
-                });
-              }).catch((error) => {
-                alert(error)
-                console.log(error.message)
-              });
-            
+            e.preventDefault()
+
+            const credential = promptForCredentials();
+            user.reauthenticateWithCredential(credential).then(() => {
+              // User re-authenticated.
+              console.log('hi')
+            }).catch((error) => {
+              // An error occurred
+              // ...
+            });
+            user.updateEmail(document.getElementById('emailChange').value).then(() => {
+              // Update successful
+              // ...
+            }).catch((error) => {
+              alert(error)
+            });            
           })
 
         db.ref('users/' + user.uid).once('value')

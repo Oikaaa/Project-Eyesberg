@@ -13,7 +13,6 @@ const firebaseConfig = {
   const auth = firebase.auth()
   const database = firebase.database()
   const user = firebase.auth().currentUser;
-  var provider = new firebase.auth.GoogleAuthProvider();
 
   //----
 
