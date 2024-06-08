@@ -134,7 +134,10 @@ if (user) {
                     db.ref('users/' + uid + '/detail/cart').set({0:0})
                     console.log(reading)
                     db.ref('users/' + uid + '/detail/reading').set(reading)
-                    .then(()=>{window.location.href = '../library.html'})
+                    .then(()=>{
+                      db.ref('users/' + uid + '/achievement').update({goodWill: true})
+                      then(()=>{window.location.href = '../library.html'})
+                    })
                   })
                 })
               })

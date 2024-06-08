@@ -58,7 +58,7 @@ submitBtn.addEventListener('click', (e)=>{
           bookId: 'null',
           description: 'Describe yourself...',
           detail:{
-            rate: '',
+            rate: 0,
             gender: 'male',
             dob: {
               date: '1',
@@ -89,6 +89,11 @@ submitBtn.addEventListener('click', (e)=>{
             friend: true,
             profileViewable: 'everyone',
             emailViewable: false
+          },
+          achievement:{
+            goodWill: false,
+            readingMachine: false,
+            author: false,
           },
         }).then(()=>{
           alert('successful')

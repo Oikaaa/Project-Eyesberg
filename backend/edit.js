@@ -285,6 +285,11 @@
                     profileViewable: true,
                     emailViewable: false
                   },
+                  achievement:{
+                    goodWill: currentValue.achievement.goodWill,
+                    readingMachine: currentValue.achievement.readingMachine,
+                    author: currentValue.achievement.author,
+                  },
               };
               db.ref('users/' + user.uid).update(changes)              
               user.updateProfile({

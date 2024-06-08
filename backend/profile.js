@@ -16,6 +16,8 @@
         document.getElementById('desHeader').innerHTML = `${displayName}'s description`
         document.getElementById('joinDate').innerHTML = `${date}`
 
+
+
         if(emailVerified === true){
           document.getElementById('userVerified').innerHTML = `Verified`
         }
@@ -29,6 +31,25 @@
             const gender = data.detail.gender
             const description = data.description
             const namePublic = data.setting.namePublic
+            const reiewRate = data.detail.rate
+
+            document.getElementById('reviewRate').innerHTML = `(${reiewRate}) review`
+
+            function badge(x){
+              x.innerText = "(complete)"
+              x.classList.add('complete')
+              x.classList.remove('incomplete')
+            }
+
+            if(data.achievement.goodWill === true){
+              badge(document.getElementById('goodWill'))
+            }
+            if(data.achievement.readingMachine === true){
+              badge(document.getElementById('readingMachine'))
+            }
+            if(data.achievement.author === true){
+              badge(document.getElementById('author'))
+            }
 
             if (namePublic === true){
               document.getElementById('upperProfileDetail').innerHTML = `<h1 class="upperDN">${displayName} <span style="font-style:italic; font-weight: 400; font-size: 15px;">(${data.firstName} ${data.lastName})</span> <a class="editProfileText" href="./edit.html">[edit profile]</a> </h1>`

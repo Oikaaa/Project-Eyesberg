@@ -463,13 +463,18 @@ auth.onAuthStateChanged((user) => {
                 user: snapshot.val().displayName,
                 photoURL: snapshot.val().photoURL
               }
-              console.log(review)
               if(message.value !== ""){
                 db.ref("messages/bookReview").get()
                 .then((snapshot)=>{
                   db.ref("messages/bookReview").child(snapshot.val().length).set(review)
                   .then(()=>{
-                    window.location.reload()
+                    db.ref('users/' + uid + '/detail').get()
+                    .then((snapshot)=>{
+                      db.ref('users/' + uid + '/detail').update({rate: snapshot.val().rate + 1})
+                      .then(()=>{
+                        window.location.reload()
+                      })
+                    })
                   })
                 })
               }else{
