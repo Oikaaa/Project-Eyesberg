@@ -132,12 +132,7 @@ if (user) {
                       reading.push(item)
                     })
                     db.ref('users/' + uid + '/detail/cart').set({0:0})
-                    console.log(reading)
-                    db.ref('users/' + uid + '/detail/reading').set(reading)
-                    .then(()=>{
-                      db.ref('users/' + uid + '/achievement').update({goodWill: true})
-                      then(()=>{window.location.href = '../library.html'})
-                    })
+                    window.location.href = '../library.html'
                   })
                 })
               })
